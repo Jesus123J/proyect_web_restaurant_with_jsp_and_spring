@@ -1,4 +1,9 @@
+com\utp\management_web_application\data\dto\Product.class
+com\utp\management_web_application\controller\ControllerLogin.class
+com\utp\management_web_application\resources\JakartaEE8Resource.class
 com\utp\management_web_application\data\api\Api.class
 com\utp\management_web_application\data\dto\Account.class
 com\utp\management_web_application\JakartaRestConfiguration.class
-com\utp\management_web_application\resources\JakartaEE8Resource.class
+com\utp\management_web_application\data\dto\ProductSale.class
+com\utp\management_web_application\data\dto\Area.class
+com\utp\management_web_application\data\dto\Position.class
