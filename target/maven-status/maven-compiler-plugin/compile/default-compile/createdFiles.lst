@@ -1,0 +1,4 @@
+com\utp\management_web_application\data\api\Api.class
+com\utp\management_web_application\data\dto\Account.class
+com\utp\management_web_application\JakartaRestConfiguration.class
+com\utp\management_web_application\resources\JakartaEE8Resource.class
