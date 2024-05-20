@@ -12,6 +12,6 @@
         <title>Management App web</title>
     </head>
     <body style="background-color: black">
-        <jsp:include page="admin/dashboard.jsp" />
+        <jsp:include page="Login/Login.jsp" />
     </body>
 </html>
