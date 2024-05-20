@@ -5,22 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Título de la página -->
-    <title>Login</title>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Enlace a la hoja de estilos de FontAwesome para usar iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Enlace a tu hoja de estilos CSS -->
-    
-    <link href="Style.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-    <!-- Formulario de inicio de sesión -->
-    <form action="../admin/Admin.jsp" method="get">
+
+
+  <!-- Formulario de inicio de sesión -->
+    <form action="admin/Admin.jsp" method="get">
         
         <!-- Título del formulario -->
         <h1 class="title">Login</h1>
@@ -50,5 +38,3 @@
         <!-- Botón de envío del formulario -->
         <button id="button", type="submit">Ingresando Mapache</button>
     </form>
-</body>
-</html>
