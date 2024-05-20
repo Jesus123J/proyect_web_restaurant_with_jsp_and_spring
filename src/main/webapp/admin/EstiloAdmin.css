@@ -1,93 +1,126 @@
+/* Estilos generales */
 * {
-    margin: 0; /* Quitar márgenes */
-    padding: 0; /* Quitar relleno */
-    box-sizing: border-box; /* Incluir el relleno y borde en el cálculo del ancho y alto de los elementos */
-    font-family: sans-serif; /* Establecer la fuente a sans-serif para todo el documento */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-/* Estilos para el cuerpo de la página */
 body {
-    display: flex; /* Utilizar un layout flexbox */
-    align-items: center; /* Alinear verticalmente los elementos al centro */
-    justify-content: center; /* Alinear horizontalmente los elementos al centro */
-    min-height: 100vh; /* Establecer una altura mínima de 100% de la ventana gráfica */
-    background: linear-gradient(to right, #e32929, #f9b438); /* Aplicar un fondo con degradado de rojo a amarillo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #e32929, #f9b438);
 }
 
-/* Contenedor principal que envuelve los formularios */
 .container {
-    display: flex; /* Utilizar un layout flexbox */
-    width: 80%; /* Ancho del contenedor */
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7); /* Sombra alrededor del contenedor */
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
 }
 
-/* Estilos para cada contenedor de formulario */
+/* Contenedores de formularios */
 .form-container {
-    flex: 1; /* Cada contenedor de formulario ocupa un espacio igual */
-    padding: 20px 25px; /* Espaciado interno del formulario */
-    background-color: #fff; /* Fondo blanco */
+    flex: 1;
+    padding: 20px 25px;
+    background-color: #fff;
 }
 
 .left {
-    background-color: #f0f0f0; /* Fondo gris claro para el contenedor izquierdo */
+    background-color: #f0f0f0;
 }
 
 .right {
-    background-color: #e0e0e0; /* Fondo gris claro para el contenedor derecho */
+    background-color: #e0e0e0;
 }
 
-/* Estilos para el formulario */
 form {
-    display: flex; /* Utilizar un layout flexbox */
-    flex-direction: column; /* Colocar los elementos en columna */
-    text-align: center; /* Centrarse el texto */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-/* Estilos para el título del formulario */
 form .title {
-    color: #252525; /* Color del texto gris oscuro */
-    font-size: 35px; /* Tamaño de la fuente grande */
-    font-weight: 800; /* Texto en negrita */
-    margin-bottom: 30px; /* Espaciado inferior */
+    color: #252525;
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 30px;
 }
 
-/* Estilos para las etiquetas de los campos */
 form label {
-    margin-bottom: 35px; /* Espaciado inferior grande */
+    margin-bottom: 15px;
+    display: block;
+    text-align: left;
 }
 
-/* Estilos para los campos de entrada */
 form label input {
-    outline: none; /* Quitar el contorno del campo cuando está enfocado */
-    border: none; /* Quitar el borde predeterminado */
-    color: #252525; /* Color del texto gris oscuro */
-    border-bottom: solid 1px #e32929; /* Borde inferior rojo */
-    padding: 0 5px; /* Espaciado interno horizontal */
-    font-size: 18px; /* Tamaño de la fuente mediano */
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-/* Estilos para el texto del placeholder en los campos de entrada */
-form label input::placeholder {
-    color: rgba(37, 37, 37, 0.5); /* Color gris claro y semi-transparente para el placeholder */
-}
-
-/* Estilos para los botones */
 form button {
-    color: #fff; /* Color del texto blanco */
-    border: none; /* Quitar el borde predeterminado */
-    background: linear-gradient(to right, #e32929, #f9b438); /* Fondo con degradado de rojo a amarillo */
-    padding: 10px 15px; /* Espaciado interno */
-    cursor: pointer; /* Cambiar el cursor al estilo de puntero */
-    font-size: 20px; /* Tamaño de la fuente mediano */
-    margin-bottom: 15px; /* Espaciado inferior */
+    color: #fff;
+    border: none;
+    background: linear-gradient(to right, #e32929, #f9b438);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-radius: 4px;
 }
 
-/* Estilos para la imagen */
+form button:hover {
+    background: linear-gradient(to right, #d92626, #e69929);
+}
+
+/* Estilos para la tabla */
+form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+form table, form th, form td {
+    border: 1px solid #ddd;
+}
+
+form th, form td {
+    padding: 8px;
+    text-align: left;
+}
+
+form th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos específicos para la imagen de mapache admin */
 #mapacheAdmin {
-    width: 300px; /* Ancho de la imagen */
-    height: 300px; /* Alto de la imagen */
-    border-radius: 50%; /* Convertir la imagen en un círculo */
-    object-fit: cover; /* Asegurarse de que la imagen cubra el área circular sin deformarse */
-    margin: 0 auto 20px; /* Centrar la imagen horizontalmente y agregar margen inferior */
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+}
+
+/* Estilos adicionales para los botones de la izquierda */
+#leftForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #e32929;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+#leftForm button:hover {
+    background-color: #d92626;
 }
