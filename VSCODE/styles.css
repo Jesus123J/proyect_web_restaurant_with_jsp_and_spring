@@ -154,36 +154,13 @@ body {
     z-index: 0; /* Asegura que el cuadro esté por encima del fondo pero debajo de otros elementos */
 }
 
-.formulario label {
-    display: inline-block; /* Hacemos que las etiquetas sean elementos en línea con un ancho definido */
-    width: 100px; /* Ajusta el ancho de las etiquetas según sea necesario */
-    text-align: right; /* Alinea el texto a la derecha dentro de las etiquetas */
-    margin-right: 10px; /* Añade un margen derecho para separar las etiquetas de los campos de entrada */
-    margin-bottom: 5px; /* Ajusta el espacio entre las etiquetas y los campos de entrada */
-}
-
-.formulario input {
-    padding: 5px;
-    width: 200px;
-    display: inline-block; /* Hacemos que los campos de entrada sean elementos en línea */
-    margin-bottom: 10px; /* Añade margen inferior para separar los campos de entrada */
-}
-
-.formulario label {
-    display: block;
-    margin-bottom: 5px;
-}
-
 .tabla-contenedor {
-
     width: 100%; 
     height: 100%; 
     display: flex; 
-    align-items: flex-start; /* Cambiado de flex-end a center para subir la tabla */
+    align-items: center; /* Cambiado de flex-end a center para subir la tabla */
     justify-content: center;
-    padding-bottom: 20px;
-    padding-top: 3%; /* Agrega espacio extra en la parte inferior si es necesario */
-    margin-left: 1cm;
+    padding-bottom: 20px; /* Agrega espacio extra en la parte inferior si es necesario */
 }
 
 table {
@@ -205,13 +182,17 @@ th, td {
 }
 
 .conteiner_button {
+    position: relative;
+    top: 48%; /* Centra verticalmente el contenedor */
+    right: 0; /* Alinea el contenedor a la derecha */
+    transform: translateY(-50%); /* Ajusta para centrar verticalmente */
     display: flex;
-    justify-content: flex-end; /* Alinea los botones al final del contenedor */
-    padding: 10px; /* Añade espacio alrededor del contenedor si es necesario */
-    margin-right: 20%; /* Ajusta este valor para centrar más los botones */
+    flex-direction: column; /* Coloca los botones en una columna */
+    align-items: flex-end; /* Alinea los botones a la derecha */
+    padding: 5px; 
+    padding-right: 40px;/* Añade un padding de 5px */
 }
 
 .conteiner_button button {
-    margin-left: 10px; /* Espacio entre botones */
+    margin-bottom: 5px; /* Espacio entre los botones */
 }
-
