@@ -21,10 +21,10 @@ body {
 
 /* Estilos para la barra lateral */
 .sidebar {
-    width: 250px; /* Ancho de la barra lateral aumentado a 250px */
-    height: 100vh; /* Toma toda la altura de la pantalla */
+    width: 220px; /* Ancho de la barra lateral aumentado a 220px */
+    height: calc(100vh - 60px); /* Altura ajustada para reducir el recorte superior e inferior */
     background-color: #F5F5DC; /* Fondo crema para la barra lateral */
-    padding: 20px;
+    padding: 15px; /* Reducido el padding */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -33,7 +33,9 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
     transition: all 0.3s ease; /* Transición suave para los efectos de hover */
     position: fixed; /* Fija la barra lateral en la pantalla */
-    left: 10px; /* Añade separación del lado izquierdo */
+    left: 30px; /* Mueve la barra lateral más hacia la derecha */
+    top: 30px; /* Ajusta la posición superior para reducir el recorte superior */
+    border-radius: 15px; /* Añade un borde curvado a las esquinas */
 }
 
 /* Estilos para los ítems del menú */
@@ -80,15 +82,16 @@ body {
 .cuadro-gris {
     background-color: rgb(204, 206, 204); /* Color gris */
     width: calc(100% - 330px); /* Ancho calculado para ocupar el máximo espacio disponible */
-    height: calc(100vh - 40px); /* Altura ajustada para dejar una separación más visible */
+    height: calc(100vh - 100px); /* Altura ajustada para dejar un recorte más visible */
     margin-left: 270px; /* Separación del cuadro de la barra lateral */
     margin-right: 80px; /* Aumenta la separación del lado derecho */
     position: fixed; /* Fija el cuadro en la pantalla */
-    top: 20px; /* Aumenta la separación del borde superior */
-    bottom: 20px; /* Aumenta la separación del borde inferior */
+    top: 50px; /* Incrementa el recorte en la parte superior */
+    bottom: 50px; /* Incrementa el recorte en la parte inferior */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
     z-index: 0; /* Asegura que el cuadro esté por encima del fondo pero debajo de otros elementos */
 }
+
 
 .icono-derecho {
     position: fixed; /* Fija el icono en la pantalla */
