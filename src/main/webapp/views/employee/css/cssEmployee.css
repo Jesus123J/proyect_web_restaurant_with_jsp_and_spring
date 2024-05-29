@@ -1,9 +1,64 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 27 may 2024, 10:46:55 a.m.
-    Author     : Jesus Gutierrez
-*/
+
+/* Estilos personalizados */
+/* styles.css */
+
+/* Estilos personalizados */
+
+body{
+    background-color: #CAA75D   ;
+}
+/* styles.css */
+
+/* Estilos personalizados */
+
+/* Estilo para los botones de agregar, editar y borrar */
+.btn {
+    margin-right: 10px;
+}
+
+/* Estilo para el título principal */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Estilo para las tablas */
+.table {
+    margin-bottom: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+/* Estilo para las celdas de las tablas */
+.table td, .table th {
+    padding: 12px;
+    border: 1px solid #CAA75D ;
+}
+
+/* Estilo para las filas impares de las tablas */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+   
+}
+
+/* Estilo para los encabezados de las tablas */
+.table th {
+    background-color: #CAA75D ;
+    color: white;
+}
+
+/* Estilo para las filas de las tablas */
+.table tr {
+    border-bottom: 1px solid #CAA75D ;
+}
+
+/* Estilo para la tabla de registro de entrada */
+#entradaTable {
+    margin-bottom: 40px;
+}
+
+/* Estilo para la tabla de registro de salida */
+#salidaTable {
+    margin-bottom: 40px;
+}
 
