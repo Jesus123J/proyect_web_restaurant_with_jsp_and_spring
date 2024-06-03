@@ -72,7 +72,9 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+        request.setAttribute("pageDashboard", "views/auth/Auth.jsp");
+        dispatcher.forward(request, response);
     }
 
     /**
@@ -92,10 +94,8 @@ public class ControllerServlet extends HttpServlet {
         if (accion != null && accion.equalsIgnoreCase("LoginService")) {
 
             request.getSession().setAttribute("dataLoginResponse", authDao.logIn(new LoginRequest(request.getParameter("username"), request.getParameter("password"))));
-            response.sendRedirect("index.jsp");
-
-        }
-
+            response.sendRedirect(request.getContextPath() + "/admin");
+        } 
         if (contentType
                 != null && contentType.contains(
                         "application/json")) {

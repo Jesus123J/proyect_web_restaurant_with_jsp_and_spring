@@ -9,16 +9,27 @@
 <!DOCTYPE html>
 <%
     LoginResponse dataLoginResponse = (LoginResponse) session.getAttribute("dataLoginResponse");
+    String url = (String) session.getAttribute("pageDashboard");
 %>
 <html>
+
     <head>
         <jsp:include page="views/inic/Head.jsp" />
         <title>Raccon Brothers</title>
     </head>
     <body>
+        <script>
+            console.log("<%= request.getContextPath() %>");
+             console.log("<%= request.getServletPath() %>");
+               console.log("<%= request.getPathInfo() %>");
+               console.log("<%= request.getPathTranslated()%>");
+            console.log("<%=url%>");
+        </script>
+    
         <%
+            
             if (dataLoginResponse != null) {
-            if (dataLoginResponse.getRoleType().equals("ADMINISTRADOR")) {
+                if (dataLoginResponse.getRoleType().equals("ADMINISTRADOR")) {
         %>
         <jsp:include page="views/admin/Admin.jsp" />
         <%  }
@@ -38,7 +49,7 @@
             }
         } else {
         %>
-         <jsp:include page="views/auth/Auth.jsp" />
+        <jsp:include page="views/auth/Auth.jsp" />
         <%
             }
         %>
