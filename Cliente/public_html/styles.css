@@ -1,0 +1,222 @@
+/* Estilos generales */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgb(0, 195, 255),rgb(208, 255, 0)); /* Cambia el color de fondo del body a naranja */
+}
+
+header {
+    background-color: #3b4df1;
+    color: #fff;
+    padding: 0.5em;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    position: fixed; /* Para que los elementos hijos posicionados se alineen con respecto al header */
+}
+
+header h1 {
+    font-size: 20px; /* Tamaño de fuente reducido para el nombre del header */
+    margin-top: 1px; /* Mueve el nombre del encabezado hacia arriba */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.intro, .game-list, .shopping-cart, .contact-form, .login-form {
+    margin-bottom: 2em;
+    text-align: center;
+    background-color: #ff9900; /* Cambia el color de fondo de estas secciones a blanco */
+    padding: 1em; /* Añadido padding para un mejor espacio interior */
+    border-radius: 5px; /* Bordes redondeados para mejor apariencia */
+    margin-left: 50px; /* Ajusta el margen izquierdo */
+    margin-right: 50px; /* Ajusta el margen derecho */
+}
+
+.icon-container {
+    position: fixed; /* Fijo en la pantalla */
+    top: 0.5px; /* Ajusta esta línea para mover el icono hacia abajo */
+    left: 20px; /* Ajusta esta línea para mover el icono hacia la derecha */
+    z-index: 1000; /* Asegura que el icono esté por encima de otros elementos */
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.content {
+    margin-top: 100px; /* Espacio suficiente para que el contenido no quede debajo del icono */
+    padding: 20px;
+}
+
+.contenedor-imagen {
+    position: fixed; /* Fija el contenedor en la pantalla */
+    top: 5px; /* Distancia desde la parte superior */
+    right: 15px; /* Distancia desde el lado derecho */
+}
+
+.img {
+    width: 25.9px; /* Ancho de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+/*INFORMACION Y ESTRUCTURA*/
+.intro {
+    text-align: center;
+    padding: 2rem;
+}
+
+.intro .button {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.intro .button:hover {
+    background-color: #555;
+}
+
+/*game.index*/
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-item {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    width: calc(33.333% - 2rem);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.game-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: indigo;
+}
+
+.shopping-cart button {
+    background-color: rgb(197, 20, 20);
+    color: white;
+    border: none;
+    line-height: 10px;
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+}
+
+.shopping-cart button:hover {
+    background-color: graytext;
+}
+footer {
+    background-image: linear-gradient(rgb(0, 255, 170),rgb(47, 0, 255)); /* Color de fondo del cuadro (puedes cambiarlo según tus necesidades) */
+    text-align: center;
+    /*padding: 1em 0;*/
+    padding-left: 0%;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-text {
+    margin-top: 0.5em; /* Ajusta el margen superior del texto para centrarlo verticalmente */
+}
+
+.icono-derecho {
+    position: fixed; /* Fija el icono en la pantalla */
+    right: 0.4%; /* Alinea el icono al lado derecho de la pantalla */
+    top: 50%; /* Posiciona el icono a la mitad de la pantalla verticalmente */
+    transform: translateY(-60%); /* Centra el icono verticalmente */
+}
+
+.icono-derecho img {
+    display: block; /* Asegura que la imagen no tenga espacio adicional alrededor */
+    width: 50px; /* Ancho del icono */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+.icono-derecho {
+    position: fixed;
+    right: 0.4%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icono-derecho img {
+    display: block;
+    width: 50px; /* Ancho del icono */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+.icono-derecho::after {
+    content: " RACOON      BROTHERS";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    font-style: normal;
+    font-size: 1.5em;
+    text-align: left;
+    white-space: pre;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+}
+
+.icono-derecho::after span {
+    display: block;
+}
+
+.icono-derecho::after span:nth-child(2) {
+    margin-top: 30px; /* Ajusta esta medida para bajar "BROTHERS" */
+}
+
+.cuadro {
+    width: 90%; /* Aumenta el ancho de la tabla al 150% del ancho de la página */
+    height: 1cm; /* La altura del cuadro será de 2 centímetros */
+    background-image: linear-gradient(rgb(0, 255, 170),rgb(47, 0, 255)); /* Color de fondo del cuadro (puedes cambiarlo según tus necesidades) */
+    margin-top: 50px; /* Mueve la tabla hacia abajo 50 píxeles */
+}
+
+.cuadro img {
+    width: 20px; /* Ajusta el ancho del logotipo de Instagram */
+    vertical-align: middle; /* Alinea verticalmente el logotipo con el texto */
+    margin-right: 5px; /* Añade espacio entre el logotipo y el texto */
+    text-align: left;
+}
