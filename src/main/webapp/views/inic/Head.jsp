@@ -30,7 +30,6 @@
     <%
     } else {
     %>
-  
     <link href="views/auth/css/cssAuth.css" rel="stylesheet" type="text/css"/>
     <script src="views/auth/js/jsAuth.js" type="text/javascript"></script>
     <% }%>
