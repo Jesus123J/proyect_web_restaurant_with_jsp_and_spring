@@ -49,7 +49,7 @@
             }
         } else {
         %>
-        <jsp:include page="views/auth/Auth.jsp" />
+        <jsp:include page="views/dashboard/Dashboard.jsp" />
         <%
             }
         %>

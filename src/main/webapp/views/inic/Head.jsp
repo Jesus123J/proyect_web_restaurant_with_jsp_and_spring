@@ -30,6 +30,12 @@
     <%
     } else {
     %>
+
+    <link href="views/dashboard/css/cssDashboard.css" rel="stylesheet" type="text/css"/>
+    <script src="views/dashboard/js/jsDashboard.js" type="text/javascript"></script>
+    <!-- Cliente -->
+    <!-- Pestaña -->
+
     <link href="views/auth/css/cssAuth.css" rel="stylesheet" type="text/css"/>
     <script src="views/auth/js/jsAuth.js" type="text/javascript"></script>
     <% }%>
