@@ -1,0 +1,33 @@
+body{
+    background:rgba(218, 131, 18, 0.945) ;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+img{
+    width: 50%;    
+}
+.img2{
+    width: 20%;
+}
+.container{
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    color: rgb(233, 238, 245);
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+@media screen and (max-width:630px){
+    h1{        
+        font-size: 16px;        
+    }
+}
