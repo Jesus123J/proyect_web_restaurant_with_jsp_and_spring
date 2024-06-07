@@ -4,11 +4,61 @@
 
 /* Estilos personalizados */
 
-.fondo{
-    background-image: url(fondo4k.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 120vh;
-    
+body{
+    background-color: #CAA75D   ;
+}
+/* styles.css */
+
+/* Estilos personalizados */
+
+/* Estilo para los botones de agregar, editar y borrar */
+.btn {
+    margin-right: 10px;
+}
+
+/* Estilo para el título principal */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Estilo para las tablas */
+.table {
+    margin-bottom: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+/* Estilo para las celdas de las tablas */
+.table td, .table th {
+    padding: 12px;
+    border: 1px solid #CAA75D ;
+}
+
+/* Estilo para las filas impares de las tablas */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+   
+}
+
+/* Estilo para los encabezados de las tablas */
+.table th {
+    background-color: #CAA75D ;
+    color: white;
+}
+
+/* Estilo para las filas de las tablas */
+.table tr {
+    border-bottom: 1px solid #CAA75D ;
+}
+
+/* Estilo para la tabla de registro de entrada */
+#entradaTable {
+    margin-bottom: 40px;
+}
+
+/* Estilo para la tabla de registro de salida */
+#salidaTable {
+    margin-bottom: 40px;
 }
 
