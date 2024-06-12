@@ -6,9 +6,9 @@
 %>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="icon" href="views/404/resources/raccoonb.png" type="image/x-icon">
     <title>Raccon Brothers</title>
-     <link rel="icon" href="views/404/resources/raccoonb.png" type="image/x-icon">
-     
     <% if (typeRole != null) {
             if (typeRole.equalsIgnoreCase("ADMINISTRADOR")) {
     %>
@@ -26,13 +26,13 @@
     %>
     <link href="views/dashboard/css/cssDashboard.css" rel="stylesheet" type="text/css"/>
     <script src="views/dashboard/js/jsDashboard.js" type="text/javascript"></script>
-    <%  } else if(pathServlet.equalsIgnoreCase("/login")){%>
+    <%  } else if (pathServlet.equalsIgnoreCase("/login")) {%>
     <link href="views/auth/css/cssAuth.css" rel="stylesheet" type="text/css"/>
     <script src="views/auth/js/jsAuth.js" type="text/javascript"></script>
-    <%  }else if(pathServlet.equalsIgnoreCase("/404")){%>
+    <%  } else if (pathServlet.equalsIgnoreCase("/404")) {%>
     <link href="views/404/css/404css.css" rel="stylesheet" type="text/css"/>
     <script src="views/404/js/404js.js" type="text/javascript"></script>
-       <%}%>
+    <%}%>
     <%}%>
 </head>
 
