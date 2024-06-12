@@ -16,7 +16,20 @@
         <url-pattern>/manager/*</url-pattern>
     </filter-mapping>
    
-   
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErrorHandler</location>
+    </error-page>
+
+    <servlet>
+        <servlet-name>ErrorHandler</servlet-name>
+        <servlet-class>com.utp.management_web_application.config.ErrorHandlerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ErrorHandler</servlet-name>
+        <url-pattern>/ErrorHandler</url-pattern>
+    </servlet-mapping>
+    
     <servlet>
         <servlet-name>ControllerDashboard</servlet-name>
         <servlet-class>com.utp.management_web_application.controller.ControllerDashboard</servlet-class>

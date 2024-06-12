@@ -6,8 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="container">
-    <img src="views/404/resorces/img1.svg" alt="">
+    <img src="views/404/resources/img1.svg" alt="">
     <h1>La página que ha solicitado no se encuentra disponible</h1>
-    <img src="images/raccoonb.png" alt=""class= "img2" > 
 </div>
 

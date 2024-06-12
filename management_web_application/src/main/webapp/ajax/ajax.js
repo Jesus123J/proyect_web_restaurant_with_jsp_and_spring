@@ -25,6 +25,8 @@ xhttp.send("path=" + encodeURIComponent(currentPath));
 async function changeContainerRegisterEmployeeAdmin() {
 
     const action = 'createEmployee';
+    
+  
 
     try {
         const response = await fetch('ControllerAdministrator', {
