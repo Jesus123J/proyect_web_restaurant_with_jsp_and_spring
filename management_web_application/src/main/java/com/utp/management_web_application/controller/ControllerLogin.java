@@ -51,6 +51,8 @@ public class ControllerLogin extends HttpServlet {
                         response.sendRedirect(request.getContextPath() + "/admin");
                     } else if (sessionAccount.getRoleType().equalsIgnoreCase("GERENTE")) {
                         response.sendRedirect(request.getContextPath() + "/manager");
+                    } else if (sessionAccount.getRoleType().equalsIgnoreCase("EMPLEADO")) {
+                        response.sendRedirect(request.getContextPath() + "/employee");
                     }
                 }
             } else {

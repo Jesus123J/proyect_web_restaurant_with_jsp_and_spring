@@ -14,7 +14,7 @@
     %>
     <link href="views/admin/css/cssAdmin.css" rel="stylesheet" type="text/css"/>
     <script src="views/admin/js/jsAdmin.js" type="text/javascript"></script>
-    <%  } else if (typeRole.equalsIgnoreCase("EMPELADO")) {%>
+    <%  } else if (typeRole.equalsIgnoreCase("EMPLEADO")) {%>
     <link href="views/employee/css/cssEmployee.css" rel="stylesheet" type="text/css"/>
     <script src="views/employee/js/jsEmployee.js" type="text/javascript"></script>
     <%  } else if (typeRole.equalsIgnoreCase("GERENTE")) {%>

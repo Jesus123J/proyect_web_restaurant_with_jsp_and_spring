@@ -18,17 +18,19 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ControllerEmployee", urlPatterns = {"/employee"})
 public class ControllerEmployee extends HttpServlet {
- 
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-    }
+        request.setAttribute("pages", "views/employee/Empleado.jsp");
+        request.setAttribute("path", request.getServletPath());
+        request.getRequestDispatcher("index.jsp").forward(request, response);
 
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
+
     }
 }
