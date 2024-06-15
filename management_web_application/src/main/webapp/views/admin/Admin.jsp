@@ -4,15 +4,14 @@
 <div class="container">
     <div class="form-container left">
         <form id="leftForm">
-            <button type="button" onclick="changeContainerRegisterEmployeeAdmin()">Crear Empleados</button>
-
-            <button type="button" onclick="changeContainerShowOrderAdmin()">Ver pedidos</button>
-            <button type="button" onclick="changeContainerShowEmployeeAdmin()">reportes</button>
-            <button type="button" onclick="changeContainerCreateProduct()">Crear Producto</button>
+            <button type="button" onclick="changeContainerRegisterEmployeeAdmin()" class="admin-button">Crear Empleados</button>
+            <button type="button" onclick="changeContainerShowOrderAdmin()" class="admin-button">Ver pedidos</button>
+            <button type="button" onclick="changeContainerShowEmployeeAdmin()" class="admin-button">Reportes</button>
+            <button type="button" onclick="changeContainerCreateProduct()" class="admin-button">Crear Producto</button>
         </form>
     </div>
-    <div class="form-container right" id ="rightForm">
-
+    <div class="form-container right" id="rightForm">
+        <!-- Aquí se cargarán los formularios dinámicamente -->
     </div>
 </div>
 
