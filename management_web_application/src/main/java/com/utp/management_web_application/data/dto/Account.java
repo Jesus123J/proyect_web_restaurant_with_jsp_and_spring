@@ -4,12 +4,20 @@
  */
 package com.utp.management_web_application.data.dto;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 public class Account {
-    private String username = "StrangeHuaman";
+    
+    @NotNull(message = "El nombre de usuario no puede estar vacío")
+    @Size(min = 6, message = "El nombre de usuario debe tener al menos {min} caracteres")
+    private String username;
+
+    @NotNull(message = "La contraseña no puede estar vacía")
+    @Size(min = 8, message = "La contraseña debe tener al menos {min} caracteres")
     private String password;
 }

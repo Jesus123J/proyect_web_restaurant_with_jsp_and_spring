@@ -23,11 +23,8 @@
     }
 %>
 <html>
-    <head>
-        <jsp:include page="views/inic/Head.jsp" />
-        <title>Raccon Brothers</title>
-    </head>
-    <body> 
+    <jsp:include page="views/inic/Head.jsp" />
+    <body>  
         <jsp:include page = "<%=pages%>" />  
     </body>
 </html>

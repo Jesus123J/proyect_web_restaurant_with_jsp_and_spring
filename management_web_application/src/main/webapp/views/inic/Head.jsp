@@ -32,7 +32,7 @@
     <%  } else if (pathServlet.equalsIgnoreCase("/404")) {%>
     <link href="views/404/css/404css.css" rel="stylesheet" type="text/css"/>
     <script src="views/404/js/404js.js" type="text/javascript"></script>
-    <%}%>
+    <%  }  %>
     <%}%>
 </head>
 

@@ -20,7 +20,7 @@
             <!-- Contenido de la derecha -->
             Contenido principal de la derecha.
         </div>
-    </div>
+    </div>w
 </main>
 <script>
     function toggleMenu() {
