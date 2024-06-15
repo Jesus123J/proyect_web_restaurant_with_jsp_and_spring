@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link href="views/admin/css/segundoform.css" rel="stylesheet" type="text/css"/>
+
 <form>
     <h2>Crear Empleados</h2>
     <label>

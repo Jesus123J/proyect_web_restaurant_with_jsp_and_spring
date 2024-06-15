@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Reset y estilos base */
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +6,7 @@
     font-family: sans-serif;
 }
 
+/* Estilo del cuerpo */
 body {
     display: flex;
     align-items: center;
@@ -14,146 +15,118 @@ body {
     background: linear-gradient(to right, #e32929, #f9b438);
 }
 
+/* Contenedor principal */
 .container {
     display: flex;
     width: 80%;
     max-width: 1200px;
-    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
-}
-
-/* Contenedores de formularios */
-.form-container {
-    flex: 1;
-    padding: 20px 25px;
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
+/* Contenedor de los formularios */
+.form-container {
+    width: 50%;
+    padding: 20px;
+}
+
+/* Estilos para el formulario izquierdo */
 .left {
-    background-color: #f0f0f0;
-}
-
-.right {
-    background-color: #e0e0e0;
-}
-
-/* Estilos para formularios y botones */
-form {
+    background-color: #f3f3f3;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
 }
 
-form .title {
-    color: #252525;
-    font-size: 35px;
-    font-weight: 800;
-    margin-bottom: 30px;
+.left form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 
-form label {
+.admin-button {
+    width: 80%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    background: linear-gradient(to right, #e32929, #f9b438);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.admin-button:hover {
+    background: linear-gradient(to right, #d92626, #e69929);
+}
+
+/* Estilos para el formulario derecho */
+.right form {
+    display: flex;
+    flex-direction: column;
+}
+
+.right form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.right form label {
     margin-bottom: 15px;
-    display: block;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
-form label input {
+.right form label input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-form button {
-    color: #fff;
-    border: none;
-    background: linear-gradient(to right, #e32929, #f9b438);
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 20px;
-    margin-bottom: 15px;
-    border-radius: 4px;
+.right form .button-group {
+    display: flex;
+    justify-content: space-between;
 }
 
-form button:hover {
+.right form .button-group button {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background: linear-gradient(to right, #e32929, #f9b438);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.right form .button-group button:hover {
     background: linear-gradient(to right, #d92626, #e69929);
 }
 
 /* Estilos para la tabla */
-form table {
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-form table, form th, form td {
-    border: 1px solid #ddd;
+table, th, td {
+    border: 1px solid #ccc;
 }
 
-form th, form td {
-    padding: 8px;
-    text-align: left;
-}
-
-form th {
-    background-color: #f2f2f2;
-}
-
-/* Estilos adicionales para los botones de la izquierda */
-#leftForm button {
-    width: 100%;
+th, td {
     padding: 10px;
-    margin-bottom: 10px;
-    background-color: #e32929;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-}
-
-#leftForm button:hover {
-    background-color: #d92626;
-}
-
-/* Estilos específicos para el formulario de la derecha */
-#rightForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#rightForm form {
-    width: 100%;
-    max-width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
-    border-radius: 8px;
-}
-
-#rightForm h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #252525;
-}
-
-#rightForm table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-#rightForm th, #rightForm td {
-    border: 1px solid #ddd;
-    padding: 8px;
     text-align: left;
 }
 
-#rightForm th {
-    background-color: #f2f2f2;
+th {
+    background-color: #f3f3f3;
 }
