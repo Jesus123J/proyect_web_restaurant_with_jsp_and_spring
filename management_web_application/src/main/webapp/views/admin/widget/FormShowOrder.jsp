@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<link href="views/admin/css/segundoform.css" rel="stylesheet" type="text/css"/>
  <h2>Ver Pedidos</h2>
                     <table>
                         <thead>

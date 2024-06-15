@@ -5,9 +5,9 @@
     <div class="form-container left">
         <form id="leftForm">
             <button type="button" onclick="changeContainerRegisterEmployeeAdmin()">Crear Empleados</button>
-            <button type="button" onclick="changeContainerShowStoreAdmin()">Inventario</button>
+
             <button type="button" onclick="changeContainerShowOrderAdmin()">Ver pedidos</button>
-            <button type="button" onclick="changeContainerShowEmployeeAdmin()">Horario empleados</button>
+            <button type="button" onclick="changeContainerShowEmployeeAdmin()">reportes</button>
             <button type="button" onclick="changeContainerCreateProduct()">Crear Producto</button>
         </form>
     </div>

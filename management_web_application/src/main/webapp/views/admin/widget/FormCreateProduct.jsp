@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<link href="views/admin/css/segundoform.css" rel="stylesheet" type="text/css"/>
 <h2>Crear Producto</h2>
 <label>
     ID:
