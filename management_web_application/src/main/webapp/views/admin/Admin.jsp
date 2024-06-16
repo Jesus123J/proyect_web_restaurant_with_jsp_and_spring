@@ -7,7 +7,7 @@
             <button type="button" onclick="changeContainerRegisterEmployeeAdmin()" class="admin-button">Crear Empleados</button>
             <button type="button" onclick="changeContainerShowOrderAdmin()" class="admin-button">Ver pedidos</button>
             <button type="button" onclick="changeContainerShowEmployeeAdmin()" class="admin-button">Reportes</button>
-            <button type="button" onclick="changeContainerCreateProduct()" class="admin-button">Crear Producto</button>
+            <button type="button" onclick="changeContainerShowStoreAdmin()" class="admin-button">Crear Producto</button>
         </form>
     </div>
     <div class="form-container right" id="rightForm">

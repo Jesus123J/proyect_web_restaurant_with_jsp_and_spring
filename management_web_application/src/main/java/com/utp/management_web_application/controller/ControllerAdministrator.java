@@ -66,7 +66,7 @@ public class ControllerAdministrator extends HttpServlet {
                         dispatchersShowOrder.forward(request, response);
                         break;
                     case "showStore":
-                        RequestDispatcher dispatchersShowStore = request.getRequestDispatcher("views/admin/widget/FormShowStore.jsp");
+                        RequestDispatcher dispatchersShowStore = request.getRequestDispatcher("views/admin/widget/FormCreateProduct.jsp");
                         dispatchersShowStore.forward(request, response);
                         break;
                 }

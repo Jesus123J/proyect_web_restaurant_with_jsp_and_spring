@@ -10,7 +10,7 @@
     <link rel="icon" href="views/404/resources/raccoonb.png" type="image/x-icon">
     <title>Raccon Brothers</title>
     <% if (typeRole != null) {
-            if (typeRole.equalsIgnoreCase("ADMINISTRADOR")) {
+            if (typeRole.equalsIgnoreCase("JEFE")) {
     %>
     <link href="views/admin/css/cssAdmin.css" rel="stylesheet" type="text/css"/>
     <script src="views/admin/js/jsAdmin.js" type="text/javascript"></script>
