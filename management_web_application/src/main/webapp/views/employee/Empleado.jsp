@@ -3,542 +3,676 @@
     Created on : 27 may. 2024, 8:19:37 p. m.
     Author     : Joshua Jose
 --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
 
-  <main>
+<main>
 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="css/mainEmployee.css" rel="stylesheet" type="text/css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-        <title>Empleados</title>
-  </head>
-  <body  class="fondo">
-     
-         
-    <!--ENCABEZADO-->
-    <!-- ===================================== -->
-  <header>
-    <h1 class="container-fluid bg-warning d-flex  fw-bold">
-           <nav class="navbar navbar-expand-lg bg-body-tertiary">
-               
-               <a> <span class="nav-link active text-dark fs-5 fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
-  <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/>
-                       </svg>Racoon Brothers</span></a>                   
-               
-  
-  <div class="container-fluid">
-    <a class="navbar-brand" href="../admin/Admin.jsp">
-        <span class="text-dark fs-10 fw-bold" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
-  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"/>
-</svg>Admin</span> 
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active text-dark fs-5 fw-bold" aria-current="page" href="../../index.jsp"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
-  
-</svg>Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active text-dark fs-5 fw-bold" href="../employee/Employee.jsp"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-</svg>Empleados</a> 
-        </li>
-           <li class="nav-item">
-          <a class="nav-link active text-dark fs-5 fw-bold" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
-  <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6m5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1z"/>
-</svg>Gerente</a>
-        </li>
-     </ul>
-         </div>
-  </div>
-</nav>
-      </div>
-      </h1
-      
-    <!-- Optional JavaScript; choose one of the two! -->
+                <!-- Bootstrap CSS -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                    <link rel="stylesheet" href=".css">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-timepicker@0.5.2/css/bootstrap-timepicker.min.css">
+                                    <!-- jQuery and Bootstrap JS -->
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.es.min.js"></script>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                                    <script>
+                                        $(document).ready(function () {
+                                            // Inicializar datepickers
+                                            $('.datepicker').datepicker({
+                                                format: 'yyyy-mm-dd',
+                                                language: 'es',
+                                                autoclose: true,
+                                                todayHighlight: true
+                                            });
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-   
-    
-    <div class="container">
-  
-  <table class="table table-bordered table-striped table-warning table-hover caption-top">
-      <caption class="text-white fs-5 fw-bold bg-warning">Horarios de Ingreso</caption>
-      <thead>
-    <tr>
-      <th scope="col" >Tabla de Ingresos de Empleados </th> 
-      <th scope="col">Apellidos</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Fecha</th> 
-      <th></th>
-      
-    </tr>
-          
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1 </th> 
-      <td>hola</td>
-      <td>hola</td>
-      <td> <div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script>
-                         </td>
-      <td><button type="button" class="btn btn-primary">Agregar</button>
-            </div>
-            
-        </div>
-        
-        
-    </div>
-   
+                                            // Inicializar timepickers
+                                            $('.timepicker').timepicker({
+                                                minuteStep: 1,
+                                                language: 'es',
+                                                showMeridian: false,
+                                                defaultTime: false,
+                                                autoclose: true,
+                                                todayHighlight: true
+                                            });
+                                        });
 
+                                        function deleteRow(button) {
+                                            var row = button.parentNode.parentNode;
+                                            row.parentNode.removeChild(row);
+                                        }
 
-     <div class="container">
-         <p></p></td>
-      
-    </tr>
-      
-      <tr>
-     <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-     
-      <td></td>
-      
-      
-      <tr>
-      
-          
-          
-          
-          
-          
-          
-   <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-       <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-      <td></td>
-          </tr>
-  </tbody>
-      
-</table>
-        <button type="button" class="btn btn-success">Generar Reporte</button>
-            </div>
-            
-        </div>
-        
-        
-    </div>
-   
+                                        function addRow(tableId) {
+                                            var table = document.getElementById(tableId).getElementsByTagName('tbody')[0];
+                                            var newRow = table.insertRow();
 
+                                            switch (tableId) {
+                                                case 'ingresoTable':
+                                                    addEmptyRow(newRow, 2); // Dos celdas (Fecha y Hora de Ingreso)
+                                                    break;
+                                                case 'salidaTable':
+                                                    addEmptyRow(newRow, 2); // Dos celdas (Fecha y Hora de Salida)
+                                                    break;
+                                                case 'faltasTable':
+                                                    addFaltasRow(newRow, 2); // Dos celdas (Fecha y Motivo)
+                                                    break;
+                                                case 'descansosTable':
+                                                    addDescansosRow(newRow, 5); // Cinco celdas (Apellidos, Nombres, Fecha, Hora de Inicio y Hora de Fin)
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
 
-     <div class="container">
-         <p></p>
- 
-  <table class="table table-bordered table-striped table-warning table-hover caption-top">
-      <caption class="text-white fs-5 fw-bold bg-warning">Horarios de Salida</caption>
-      <thead>
-    <tr>
-      <th scope="col" >Tabla de Salida de Empleados</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Estado</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Empleado1</td>
-      <td>Apellido1</td>
-       <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-    <td><td><button type="button" class="btn btn-primary">Agregar</button>
-            </div>
-            
-        </div>
-        
-        
-    </div>
-   
+                                            var actionCell = newRow.insertCell(-1);
+                                            var deleteButton = document.createElement('button');
+                                            deleteButton.className = 'btn btn-danger';
+                                            deleteButton.textContent = 'Eliminar';
+                                            deleteButton.onclick = function () {
+                                                deleteRow(this);
+                                            };
+                                            actionCell.appendChild(deleteButton);
+
+                                            var dialog = new bootstrap.Modal(document.getElementById('exampleModal'));
+                                            dialog.show();
+
+                                            // Reinicializar los datepickers para la nueva fila
+                                            $('.datepicker').datepicker('update');
+                                            // Reinicializar los timepickers para la nueva fila
+                                            $('.timepicker').timepicker('update');
+                                        }
+
+                                        function addEmptyRow(row, numCells) {
+                                            for (var i = 0; i < numCells; i++) {
+                                                var newCell = row.insertCell(i);
+                                                var input = document.createElement('input');
+                                                input.type = 'text';
+                                                input.className = 'form-control';
+
+                                                if (i === 0) { // Asumiendo que la primera celda es para la fecha (datepicker)
+                                                    input.className += ' datepicker';
+                                                    input.placeholder = 'yyyy-mm-dd';
+                                                } else if (i === 1) { // Asumiendo que la segunda celda es para la hora (timepicker)
+                                                    input.className += ' timepicker';
+                                                    input.placeholder = 'HH:mm';
+                                                }
+
+                                                newCell.appendChild(input);
+                                            }
+                                        }
+
+                                        function addFaltasRow(row, numCells) {
+                                            for (var i = 0; i < numCells; i++) {
+                                                var newCell = row.insertCell(i);
+                                                var input = document.createElement('input');
+                                                input.type = 'text';
+                                                input.className = 'form-control';
+
+                                                if (i === 0) { // Asumiendo que la primera celda es para la fecha (datepicker)
+                                                    input.className += ' datepicker';
+                                                    input.placeholder = 'yyyy-mm-dd';
+                                                } else if (i === 1) { // Asumiendo que la segunda celda es para el motivo (texto)
+                                                    input.placeholder = "Motivo";
+                                                }
+
+                                                newCell.appendChild(input);
+                                            }
+                                        }
+
+                                        function addDescansosRow(row, numCells) {
+                                            for (var i = 0; i < numCells; i++) {
+                                                var newCell = row.insertCell(i);
+                                                var input = document.createElement('input');
+                                                input.type = 'text';
+                                                input.className = 'form-control';
+
+                                                if (i === 0) { // Primera celda para Apellidos
+                                                    input.placeholder = 'Apellidos';
+                                                } else if (i === 1) { // Segunda celda para Nombres
+                                                    input.placeholder = 'Nombres';
+                                                } else if (i === 2) { // Tercera celda para la fecha (datepicker)
+                                                    input.className += ' datepicker';
+                                                    input.placeholder = 'yyyy-mm-dd';
+                                                } else if (i === 3 || i === 4) { // Cuarta y Quinta celdas para la hora (timepicker)
+                                                    input.className += ' timepicker';
+                                                    input.placeholder = 'HH:mm';
+                                                }
+
+                                                newCell.appendChild(input);
+                                            }
+                                        }
+                                        function guardarDatos() {
+                                            var datos = {
+                                                ingresos: [],
+                                                salidas: [],
+                                                faltas: [],
+                                                descansos: []
+                                            };
+
+                                            // Capturar datos de ingresos desde el modal
+                                            var ingresoFecha = $('#modalIngresoFecha').val();
+                                            var ingresoHora = $('#modalIngresoHora').val();
+                                            var ingresoObjeto = {
+                                                fecha: ingresoFecha,
+                                                hora: ingresoHora
+                                            };
+                                            datos.ingresos.push(ingresoObjeto);
+
+                                            // Capturar datos de salidas desde el modal
+                                            var salidaFecha = $('#modalSalidaFecha').val();
+                                            var salidaHora = $('#modalSalidaHora').val();
+                                            var salidaObjeto = {
+                                                fecha: salidaFecha,
+                                                hora: salidaHora
+                                            };
+                                            datos.salidas.push(salidaObjeto);
+
+                                            // Capturar datos de faltas desde el modal
+                                            var faltaFecha = $('#modalFaltaFecha').val();
+                                            var faltaMotivo = $('#modalFaltaMotivo').val();
+                                            var faltaObjeto = {
+                                                fecha: faltaFecha,
+                                                motivo: faltaMotivo
+                                            };
+                                            datos.faltas.push(faltaObjeto);
+
+                                            // Capturar datos de descansos desde el modal
+                                            var descansoApellidos = $('#modalDescansoApellidos').val();
+                                            var descansoNombres = $('#modalDescansoNombres').val();
+                                            var descansoFecha = $('#modalDescansoFecha').val();
+                                            var descansoHoraInicio = $('#modalDescansoHoraInicio').val();
+                                            var descansoHoraFin = $('#modalDescansoHoraFin').val();
+                                            var descansoObjeto = {
+                                                apellidos: descansoApellidos,
+                                                nombres: descansoNombres,
+                                                fecha: descansoFecha,
+                                                horaInicio: descansoHoraInicio,
+                                                horaFin: descansoHoraFin
+                                            };
+                                            datos.descansos.push(descansoObjeto);
+
+                                            console.log(datos);
+
+                                            // Aquí deberías hacer lo que necesites con los datos, por ejemplo, enviarlos al servidor
+                                            // usando AJAX para almacenarlos en la base de datos, etc.
+
+                                            // Cerrar el modal después de guardar
+                                            var dialog = new bootstrap.Modal(document.getElementById('exampleModal'));
+                                            dialog.hide();
+                                        }
 
 
-     <div class="container">
-         <p></p></td>
-      
-    </tr></td>
-    </tr>
-    
-    <tr>
-      <th scope="row">2</th>
-      <td>Empleado1</td>
-      <td>Apellido1</td>
-       <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-      <td></td>
-      <td></td>
-    </tr > 
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-       <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-      <td></td>
-      <td></td>
-          </tr>
-  </tbody>
-      
-</table>
-        <button type="button" class="btn btn-success">Generar Reporte</button>
-           </div>
-            
-        </div>
-        
-        
-    </div>
-           </div>
-                </div>
-   
+                                    </script>
+
+                                    <style>
+                                        body {
+                                            background: rgb(131,58,180);
+                                            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+                                        }
+                                        .table {
+                                            width: 100%;
+                                            margin-bottom: 1rem;
+                                            background-color: #dc3545;
+                                            color: #dc3545;
+                                            border-collapse: collapse;
+                                            border-radius: 0.5rem;
+                                            overflow: hidden;
+                                            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                                        }
+
+                                        /* Estilo de cabecera de tabla */
+                                        .table thead {
+                                            background-color: #f8f9fa;
+                                            color: #6c757d;
+                                        }
+
+                                        /* Estilo de las celdas del cuerpo de la tabla */
+                                        .table tbody tr {
+                                            transition: background-color 0.3s ease;
+                                        }
+
+                                        /* Estilo de las celdas del cuerpo al pasar el mouse */
+                                        .table tbody tr:hover {
+                                            background-color: rgba(0, 0, 0, 0.075);
+                                        }
+
+                                        /* Estilo para las acciones (botones) */
+                                        .table.btn {
+                                            padding: 0.375rem 0.75rem;
+                                            font-size: 0.875rem;
+                                            line-height: 1.5;
+                                            border-radius: 0.25rem;
+                                        }
+
+                                        /* Estilo para las celdas de la primera columna con fecha */
+                                        .table tbody td:first-child {
+                                            min-width: 150px; /* Ajustar ancho mínimo para la columna de fecha */
+                                        }
+
+                                        /* Ajuste específico para los botones de eliminar */
+                                        .table .btn-danger {
+                                            background-color: #dc3545;
+                                            border-color: #dc3545;
+                                        }
+
+                                        /* Ajuste para los botones de agregar */
+                                        .btn-success {
+                                            background-color: #198754;
+                                            border-color: #198754;
+                                        }
+
+                                        /* Estilos para las tablas */
+                                        .table {
+                                            background-color: rgba(255, 193, 7, 0.2); /* Color amarillo translúcido */
+                                            border-radius: 10px; /* Bordes redondeados */
+                                            border: 1px solid rgba(255, 193, 7, 0.5); /* Borde amarillo más oscuro */
+                                        }
+
+                                        .table-striped tbody tr:nth-of-type(odd) {
+                                            background-color: rgba(255, 193, 7, 0.1); /* Color de fondo para filas impares */
+                                        }
+
+                                        .sidebar {
+                                            width: 200px;
+                                            height: 100vh;
+                                            position: fixed;
+                                            top: 0;
+                                            left: 0;
+                                            background-color: #343a40;
+                                            padding-top: 20px;
+                                            z-index: 1000;
+                                        }
+
+                                        .sidebar a {
+                                            padding: 10px 15px;
+                                            text-decoration: none;
+                                            font-size: 18px;
+                                            color: white;
+                                            display: block;
+                                        }
+
+                                        .sidebar a:hover {
+                                            background-color: #575d63;
+                                        }
+
+                                        .icono-derecho {
+                                            position: fixed; /* Fija el icono en la pantalla */
+                                            right: 0.4%; /* Alinea el icono al lado derecho de la pantalla */
+                                            top: 50%; /* Posiciona el icono a la mitad de la pantalla verticalmente */
+                                            transform: translateY(-60%); /* Centra el icono verticalmente */
+                                        }
+
+                                        .icono-derecho img {
+                                            display: block; /* Asegura que la imagen no tenga espacio adicional alrededor */
+                                            width: 50px; /* Ancho del icono */
+                                            height: auto; /* Altura automática para mantener la proporción */
+                                        }
+                                        .icono-derecho {
+                                            position: fixed;
+                                            right: 0.4%;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                        }
+
+                                        .icono-derecho img {
+                                            display: block;
+                                            width: 50px; /* Ancho del icono */
+                                            height: auto; /* Altura automática para mantener la proporción */
+                                        }
+
+                                        .icono-derecho::after {
+                                            content: " RACOON      BROTHERS";
+                                            display: block;
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%) rotate(90deg);
+                                            font-style: normal;
+                                            font-size: 1.5em;
+                                            text-align: left;
+                                            white-space: pre;
+                                            letter-spacing: 5px;
+                                            word-spacing: 10px;
+                                        }
+
+                                        .icono-derecho::after span {
+                                            display: block;
+                                        }
+
+                                        .icono-derecho::after span:nth-child(2) {
+                                            margin-top: 30px; /* Ajusta esta medida para bajar "BROTHERS" */
+                                        }
+
+                                        .offcanvas {
+                                            background-color: #343a40; /* Cambia este color al que desees */
+                                            color: white; /* Cambia el color del texto si es necesario */
+                                            width: 200px; /* Ancho del offcanvas */
+                                        }
+                                        .content.bg-warning {
+                                            background-color: #ffc107; /* Cambia el color de fondo a amarillo */
+                                            padding: 20px; /* Añade un espacio de relleno para separar el contenido del borde */
+                                            margin: 0; /* Elimina cualquier margen predeterminado */
+                                            height: 90vh; /* Asegura que ocupe toda la altura del viewport */
+                                        }
+
+                                        body {
+                                            background: rgb(131,58,180);
+                                            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+                                        }
+                                        .table {
+                                            width: 100%;
+                                            margin-bottom: 1rem;
+                                            background-color: #dc3545;
+                                            color: #dc3545;
+                                            border-collapse: collapse;
+                                            border-radius: 0.5rem;
+                                            overflow: hidden;
+                                            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                                        }
+
+                                        /* Estilo de cabecera de tabla */
+                                        .table thead {
+                                            background-color: #f8f9fa;
+                                            color: #6c757d;
+                                        }
+
+                                        /* Estilo de las celdas del cuerpo de la tabla */
+                                        .table tbody tr {
+                                            transition: background-color 0.3s ease;
+                                        }
+
+                                        /* Estilo de las celdas del cuerpo al pasar el mouse */
+                                        .table tbody tr:hover {
+                                            background-color: rgba(0, 0, 0, 0.075);
+                                        }
+
+                                        /* Estilo para las acciones (botones) */
+                                        .table.btn {
+                                            padding: 0.375rem 0.75rem;
+                                            font-size: 0.875rem;
+                                            line-height: 1.5;
+                                            border-radius: 0.25rem;
+                                        }
+
+                                        /* Estilo para las celdas de la primera columna con fecha */
+                                        .table tbody td:first-child {
+                                            min-width: 150px; /* Ajustar ancho mínimo para la columna de fecha */
+                                        }
+
+                                        /* Ajuste específico para los botones de eliminar */
+                                        .table .btn-danger {
+                                            background-color: #dc3545;
+                                            border-color: #dc3545;
+                                        }
+
+                                        /* Ajuste para los botones de agregar */
+                                        .btn-success {
+                                            background-color: #198754;
+                                            border-color: #198754;
+                                        }
+
+                                        /* Estilos para las tablas */
+                                        .table {
+                                            background-color: rgba(255, 193, 7, 0.2); /* Color amarillo translúcido */
+                                            border-radius: 10px; /* Bordes redondeados */
+                                            border: 1px solid rgba(255, 193, 7, 0.5); /* Borde amarillo más oscuro */
+                                        }
+
+                                        .table-striped tbody tr:nth-of-type(odd) {
+                                            background-color: rgba(255, 193, 7, 0.1); /* Color de fondo para filas impares */
+                                        }
+
+                                        .sidebar {
+                                            width: 200px;
+                                            height: 100vh;
+                                            position: fixed;
+                                            top: 0;
+                                            left: 0;
+                                            background-color: #343a40;
+                                            padding-top: 20px;
+                                            z-index: 1000;
+                                        }
+
+                                        .sidebar a {
+                                            padding: 10px 15px;
+                                            text-decoration: none;
+                                            font-size: 18px;
+                                            color: white;
+                                            display: block;
+                                        }
+
+                                        .sidebar a:hover {
+                                            background-color: #575d63;
+                                        }
+
+                                        .icono-derecho {
+                                            position: fixed; /* Fija el icono en la pantalla */
+                                            right: 0.4%; /* Alinea el icono al lado derecho de la pantalla */
+                                            top: 50%; /* Posiciona el icono a la mitad de la pantalla verticalmente */
+                                            transform: translateY(-60%); /* Centra el icono verticalmente */
+                                        }
+
+                                        .icono-derecho img {
+                                            display: block; /* Asegura que la imagen no tenga espacio adicional alrededor */
+                                            width: 50px; /* Ancho del icono */
+                                            height: auto; /* Altura automática para mantener la proporción */
+                                        }
+                                        .icono-derecho {
+                                            position: fixed;
+                                            right: 0.4%;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                        }
+
+                                        .icono-derecho img {
+                                            display: block;
+                                            width: 50px; /* Ancho del icono */
+                                            height: auto; /* Altura automática para mantener la proporción */
+                                        }
+
+                                        .icono-derecho::after {
+                                            content: " RACOON      BROTHERS";
+                                            display: block;
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%) rotate(90deg);
+                                            font-style: normal;
+                                            font-size: 1.5em;
+                                            text-align: left;
+                                            white-space: pre;
+                                            letter-spacing: 5px;
+                                            word-spacing: 10px;
+                                        }
+
+                                        .icono-derecho::after span {
+                                            display: block;
+                                        }
+
+                                        .icono-derecho::after span:nth-child(2) {
+                                            margin-top: 30px; /* Ajusta esta medida para bajar "BROTHERS" */
+                                        }
+
+                                        .offcanvas {
+                                            background-color: #343a40; /* Cambia este color al que desees */
+                                            color: white; /* Cambia el color del texto si es necesario */
+                                            width: 200px; /* Ancho del offcanvas */
+                                        }
+                                        .content.bg-warning {
+                                            background-color: #ffc107; /* Cambia el color de fondo a amarillo */
+                                            padding: 20px; /* Añade un espacio de relleno para separar el contenido del borde */
+                                            margin: 0; /* Elimina cualquier margen predeterminado */
+                                            height: 90vh; /* Asegura que ocupe toda la altura del viewport */
+                                        }
 
 
-     <div class="container">
-         <p></p>
-  <table class="table table-bordered table-striped table-warning table-hover caption-top">
-      <caption class="text-white fs-5 fw-bold bg-warning bg-warning">Lista de Faltas</caption>
-      <thead>
-    <tr>
-      <th scope="col" >Tabla de Faltas</th>
-       <th scope="col">Fecha</th>
-       <th scope="col">Falta</th>
-       <th scope="col">Dia</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Faltas Totales</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-      <td>Empleado1</td>
-      <td>Apellido1</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><td><button type="button" class="btn btn-primary">Agregar</button>
-            </div>
-            
-        </div>
-        
-        
-    </div>
-   
+                                    </style>
+                                    </head>
+                                    <!-- Botón para abrir el sidebar -->
+
+                                    <button class="btn btn-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z"/>
+                                        </svg>
+                                    </button>
+
+                                    <body>
+                                        <!-- Sidebar -->
+                                        <div class="icono-derecho">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/5787/5787016.png" alt="Icono">
+                                        </div>
+                                        <div class= "offcanvas offcanvas-start  " tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel ">
+
+                                            <div class="offcanvas-header">
+
+                                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                            </div>
+
+                                            <div class="offcanvas-body sidebar">
+                                                <a href="<%= request.getContextPath()%>/login"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
+                                                        <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15zM11 2h.5a.5.5 0 0 1 .5.5V15h-1zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1"/>
+                                                    </svg>Racoon Brothers</a>
+                                                <a href="<%= request.getContextPath()%>/home"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                                                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+                                                        <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+                                                    </svg> Inicio</a>
+
+                                            </div>
 
 
-     <div class="container">
-         <p></p></td>
-      
-    </tr></td>
-      
-      
-      
-    </tr > 
-    <tr>
-      <th scope="row">2</th>
-      <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-      <td>Empleado2</td>
-      <td>Apellido2</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-        </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><td>
-            
-        </div>
-        
-        
-    </div>
-   
-          </tr>
-    
-  </tbody>
-      
-</table>
-    <button type="button" class="btn btn-success">Generar Reporte</button>
-            </div>
-            
-        </div>
-        
-        
-    </div>
-    <div class="container">
-         <p></p>
-  <table class="table table-bordered table-striped table-warning table-hover caption-top">
-      <caption class="text-white fs-5 fw-bold bg-warning bg-warning">Lista de Descanso</caption>
-      <thead>
-    <tr>
-      <th scope="col" >Tabla de Descanso</th>
-      <th scope="col">Descanso</th>
-       <th scope="col">Duracion</th>
-       <th scope="col">Motivo</th>
-       <th scope="col">Fecha Ini</th>
-       <th scope="col">Fecha Termino</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Nombres</th>
-      <th></th>
-      <th></th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-      <td>Empleado1</td>
-      <td>Apellido1</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-       <td></td>
-      <td><button type="button" class="btn btn-primary">Agregar</button>
-            </div>
-            
-        </div>
-        
-        
-    </div>
-   
+                                        </div>
+                                        <div class="container mt-5">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h2>Registro de ingresos</h2>
+                                                    <table id="ingresoTable" class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Fecha</th>
+                                                                <th>Hora de Ingreso</th>
+                                                                <th>Acciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!-- Aquí se insertan las filas dinámicamente -->
+                                                        </tbody>
+                                                    </table>
+                                                    <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
+                                                    <button class="btn btn-success" onclick="">Generar Reporte</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-5">
+                                                <div class="col">
+                                                    <h2>Registro de salidas</h2>
+                                                    <table id="salidaTable" class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Fecha</th>
+                                                                <th>Hora de Salida</th>
+                                                                <th>Acciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!-- Aquí se insertan las filas dinámicamente -->
+                                                        </tbody>
+                                                    </table>
+                                                    <button class="btn btn-primary" onclick="addRow('salidaTable')">Agregar</button>
+                                                    <button class="btn btn-success" onclick="">Generar Reporte</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-5">
+                                                <div class="col">
+                                                    <h2>Registro de faltas</h2>
+                                                    <table id="faltasTable" class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Fecha</th>
+                                                                <th>Motivo</th>
+                                                                <th>Acciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!-- Aquí se insertan las filas dinámicamente -->
+                                                        </tbody>
+                                                    </table>
+                                                    <button class="btn btn-primary" onclick="addRow('faltasTable')">Agregar</button>
+                                                    <button class="btn btn-success" onclick="">Generar Reporte</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-5">
+                                                <div class="col">
+                                                    <h2>Registro de descansos</h2>
+                                                    <table id="descansosTable" class="table table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Apellidos</th>
+                                                                <th>Nombres</th>
+                                                                <th>Fecha</th>
+                                                                <th>Hora de Inicio</th>
+                                                                <th>Hora de Fin</th>
+                                                                <th>Acciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        </tbody>
+                                                    </table>
+                                                    <button class="btn btn-primary" onclick="addRow('descansosTable')">Agregar</button>
+                                                    <button class="btn btn-success" onclick="">Generar Reporte</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Agregar nueva fila</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                            <form id="yourTableForm">
+                                                                <div class="mb-3">
+                                                                    <label for="fechaSalida" class="form-label">Fecha</label>
+                                                                    <input type="date" class="form-control datepicker" id="fechaSalida" placeholder="YYYY-MM-DD">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="horaSalida" class="form-label">Hora de Ingreso</label>
+                                                                    <input type="time" class="form-control timepicker" id="horaSalida" placeholder="HH:MM">
+                                                                </div>
 
 
-     <div class="container">
-         <p></p></td>
-      
-    </tr></td>
-      
-      
-      
-      
-    </tr > 
-    <tr>
-      <th scope="row">2</th>
-      <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-      <td>Empleado2</td>
-      <td>Apellido2</td>
-      <td>asd</td>
-      <td>dasd</td>
-      <td></td>
-       <td></td>
-       <td></td>
-       <td></td>
-       
-      
-        </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td><div class="row form-group"
-                <label for="date" class="col-sm-1 col-form-label"></label>
-                <div class="col-sm-4">
-                    <div class="input-group date" id="datepicker">
-                        <input type="text" class="form-control">
-                        <span class="input-group-append">
-                            <span class="input-group-text bg-white">
-                                <i class="fa fa-calendar"></i>
-                                <script type="text/javascript">
-        $(function() {
-            $('#datepicker').datepicker();
-        });
-    </script></td>
-     <td>Empleado2</td>
-      <td>Apellido2</td>
-      <td>asd</td>
-      <td>dasd</td>
-      <td></td>
-       <td></td>
-       <td></td>
-       <td></td>
-      
-          </tr>
-  </tbody>
-      
-</table>
-    <button type="button" class="btn btn-success">Generar Reporte</button>
-            </div>
-            
-        </div>
-        
-        
-    </div>
-    
-  </body>
-      
-</main>
+
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p></p>
+
+                                        </div>
+
+                                          
+                                        
+
+                                    </body>
+
+                                    </main>
+
+
+
