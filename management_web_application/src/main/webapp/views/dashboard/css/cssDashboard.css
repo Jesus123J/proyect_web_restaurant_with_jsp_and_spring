@@ -212,12 +212,17 @@ footer {
     width: 90%; /* Aumenta el ancho de la tabla al 150% del ancho de la página */
     height: 1cm; /* La altura del cuadro será de 2 centímetros */
     background-image: linear-gradient(rgb(0, 255, 170),rgb(47, 0, 255)); /* Color de fondo del cuadro (puedes cambiarlo según tus necesidades) */
-    margin-top: 50px; /* Mueve la tabla hacia abajo 50 píxeles */
+    margin-top: 55px; /* Mueve la tabla hacia abajo 50 píxeles */
+    text-align: -webkit-center;
+    font-size: 24px;
 }
 
 .cuadro img {
-    width: 20px; /* Ajusta el ancho del logotipo de Instagram */
+    width: 30px; /* Ajusta el ancho del logotipo de Instagram */
     vertical-align: middle; /* Alinea verticalmente el logotipo con el texto */
-    margin-right: 5px; /* Añade espacio entre el logotipo y el texto */
+    margin-right: 10px; /* Añade espacio entre el logotipo y el texto */
     text-align: left;
+    
 }
+
+
