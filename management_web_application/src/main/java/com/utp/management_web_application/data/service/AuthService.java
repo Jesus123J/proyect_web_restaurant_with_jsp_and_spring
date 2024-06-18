@@ -4,6 +4,7 @@
  */
 package com.utp.management_web_application.data.service;
 
+import com.utp.management_web_application.data.dto.AccountDto;
 import com.utp.management_web_application.data.rest.LoginRequest;
 import com.utp.management_web_application.data.rest.LoginResponse;
 import retrofit2.Call;
@@ -21,5 +22,7 @@ public interface AuthService {
     @POST("/oauth/login")
     @Headers("Content-Type: application/json")
     Call<LoginResponse> logIn(@Body LoginRequest loginRequest);
+
+
 
 }

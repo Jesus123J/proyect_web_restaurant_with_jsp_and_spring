@@ -13,6 +13,6 @@ public interface ManagerDao {
     List<ManagerProductDto> listResultManagerProduct();
 
     List<ManagerEmployeeDto> listResultManagerEmployee();
-
+    List<ManagerEmployeeDto> dataCompletManager();
     List<ManagerStockDto> listResultManagerStock();
 }

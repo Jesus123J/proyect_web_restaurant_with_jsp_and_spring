@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: linear-gradient(rgb(0, 195, 255),rgb(208, 255, 0)); /* Cambia el color de fondo del body a naranja */
+    background-image: linear-gradient(rgb(0, 195, 255), rgb(208, 255, 0)); /* Cambia el color de fondo del body a naranja */
 }
 
 header {
@@ -14,7 +14,7 @@ header {
     text-align: center;
     width: 100%;
     height: 30px;
-    position: fixed;/* Para que los elementos hijos posicionados se alineen con respecto al header */
+    position: fixed; /* Para que los elementos hijos posicionados se alineen con respecto al header */
     top: 0;
 }
 
@@ -43,6 +43,18 @@ main {
     padding: 2em;
     max-width: 1200px;
     margin: auto;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 500px; /* Ajusta esta altura según tus necesidades */
+    max-width: 100%; /* Asegura que el carrusel no se expanda más allá del contenedor padre */
+}
+
+.carousel-inner img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
 }
 
 .intro, .game-list, .shopping-cart, .contact-form, .login-form {
@@ -147,8 +159,9 @@ button:hover {
 .shopping-cart button:hover {
     background-color: graytext;
 }
+
 footer {
-    background-image: linear-gradient(rgb(0, 255, 170),rgb(47, 0, 255)); /* Color de fondo del cuadro (puedes cambiarlo según tus necesidades) */
+    background-image: linear-gradient(rgb(0, 255, 170), rgb(47, 0, 255)); /* Color de fondo del cuadro (puedes cambiarlo según tus necesidades) */
     text-align: center;
     /*padding: 1em 0;*/
     padding-left: 0%;
@@ -172,6 +185,7 @@ footer {
     width: 50px; /* Ancho del icono */
     height: auto; /* Altura automática para mantener la proporción */
 }
+
 .icono-derecho {
     position: fixed;
     right: 0.4%;
@@ -186,7 +200,7 @@ footer {
 }
 
 .icono-derecho::after {
-    content: " RACOON      BROTHERS";
+    content: " RACOON BROTHERS";
     display: block;
     position: absolute;
     top: 50%;
@@ -211,7 +225,7 @@ footer {
 .cuadro {
     width: 90%; /* Aumenta el ancho de la tabla al 150% del ancho de la página */
     height: 1cm; /* La altura del cuadro será de 2 centímetros */
-    background-image: linear-gradient(rgb(0, 255, 170),rgb(47, 0, 255)); /* Color de fondo del cuadro (puedes cambiarlo según tus necesidades) */
+    background-image: linear-gradient(rgb(0, 255, 170), rgb(47, 0, 255)); /* Color de fondo del cuadro (puedes cambiarlo según tus necesidades) */
     margin-top: 55px; /* Mueve la tabla hacia abajo 50 píxeles */
     text-align: -webkit-center;
     font-size: 24px;
@@ -222,7 +236,4 @@ footer {
     vertical-align: middle; /* Alinea verticalmente el logotipo con el texto */
     margin-right: 10px; /* Añade espacio entre el logotipo y el texto */
     text-align: left;
-    
 }
-
-

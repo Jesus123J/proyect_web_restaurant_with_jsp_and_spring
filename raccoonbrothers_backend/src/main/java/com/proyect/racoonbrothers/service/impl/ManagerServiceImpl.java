@@ -30,6 +30,22 @@ public class ManagerServiceImpl implements ManagerService {
     OrderProductRepository orderProductRepository;
 
     @Override
+    public ManagerEmployeeListResponse dataCompletManager() {
+        ManagerEmployeeListResponse managerEmployeeListResponse = new ManagerEmployeeListResponse();
+        List<ManagerEmployeeDto> listEmployee = managerDao.dataCompletManager();
+        if (listEmployee.isEmpty()) {
+            managerEmployeeListResponse.setStatus(204);
+            managerEmployeeListResponse.setMessage("No existe ningún producto");
+        } else {
+            managerEmployeeListResponse.setStatus(200);
+            managerEmployeeListResponse.setMessage("Se listan los productos");
+        }
+        managerEmployeeListResponse.setManagerEmployees(listEmployee);
+
+        return managerEmployeeListResponse;
+    }
+
+    @Override
     public ManagerProductListResponse listManagerProduct() {
         ManagerProductListResponse managerProductListResponse = new ManagerProductListResponse();
 

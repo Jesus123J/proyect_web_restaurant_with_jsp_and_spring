@@ -6,9 +6,7 @@ package com.utp.management_web_application.data.dto;
 
 import lombok.*;
 
-@Getter
-@AllArgsConstructor
-@ToString
+@Data
 public class AccountDto {
 
     private Long idAccount;

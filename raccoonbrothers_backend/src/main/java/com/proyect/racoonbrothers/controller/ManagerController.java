@@ -21,6 +21,14 @@ public class ManagerController {
     @Autowired
     TokenValidator tokenValidator;
 
+    @GetMapping(value = "/dataManager", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> dataCompletMamager(@RequestHeader HttpHeaders headers) throws RacoonBrotherException {
+        System.out.println("Entrando a api dataManager");
+        System.out.println(headers.getFirst(HttpHeaders.AUTHORIZATION));
+        AccountDto token = tokenValidator.verification(headers.getFirst(HttpHeaders.AUTHORIZATION) , ERole.GERENTE.name());
+        System.out.println("Entrando a api pasando");
+        return ResponseEntity.ok(token);
+    }
 //    Lista los productos registrados
     @GetMapping(value = "/product/list", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> listManagerProduct(@RequestHeader HttpHeaders headers) throws RacoonBrotherException {

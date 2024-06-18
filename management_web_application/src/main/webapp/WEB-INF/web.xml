@@ -59,6 +59,14 @@
         <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     
+      <servlet>
+        <servlet-name>ControllerManager</servlet-name>
+        <servlet-class>com.utp.management_web_application.controller.ControllerManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControllerManager</servlet-name>
+        <url-pattern>/ControllerManager</url-pattern>
+        <url-pattern>/manager</url-pattern>
+    </servlet-mapping>
     
-
 </web-app>

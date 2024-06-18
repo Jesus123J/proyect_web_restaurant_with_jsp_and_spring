@@ -54,6 +54,23 @@ public class ManagerDaoImpl implements ManagerDao {
     }
 
     @Override
+    public List<ManagerEmployeeDto> dataCompletManager() {
+        StringBuilder query = new StringBuilder();
+        query.append("SELECT p.name,");
+        query.append("	p.lastname,");
+        query.append("	p.mother_lastname,");
+        query.append("	p.email,");
+        query.append("	p.cellphone,");
+        query.append("	p.dni");
+        query.append("FROM racoon_brothers.people  p");
+        query.append("LEFT JOIN  racoon_brothers.accounts ac ON  ac.id = p.id_account");
+        query.append("LEFT JOIN  racoon_brothers.roles ro ON ro.id = ac.id_role");
+        query.append("WHERE  ro.id = 4;");
+
+        return jdbcTemplate.query(query.toString(), new ManagerEmployeeResultMapper());
+    }
+
+    @Override
     public List<ManagerStockDto> listResultManagerStock() {
         StringBuilder query = new StringBuilder();
         query.append("SELECT ");
