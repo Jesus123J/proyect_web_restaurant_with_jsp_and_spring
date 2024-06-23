@@ -5,8 +5,8 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <h2>Empleados</h2>
-
-<button type="button" id="btnDownloadPDF"  onclick="downloadPDF()" class="btn btn-primary">Generer pdf</button>
+<button type="button" id="btnDownloadPDF" onclick="downloadPDF()" class="btn btn-primary">Generar PDF</button>
+ <button type="button" id="btnDownloadExcel" onclick="downloadExcel()" class="btn btn-success">Generar Excel</button>
 <input class="buscador" type="search" placeholder="Buscar">
 <table class="table table-success table-striped">
     <thead>

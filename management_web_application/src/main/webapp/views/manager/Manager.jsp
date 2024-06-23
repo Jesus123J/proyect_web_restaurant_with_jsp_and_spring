@@ -3,6 +3,12 @@
 <%@ page import="com.utp.management_web_application.data.rest.LoginResponse" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 
+<%
+    ManagerDao managerDao = new ManagerDao();
+    AccountDto accountDto = managerDao.dataCompletManager(((LoginResponse) request.getSession().getAttribute("sessionAccount")).getToken());
+%>
+<main>
+<script src="ajax/ajax.js" type="text/javascript"></script>
 <style>
     .table-light {
         font-size: 16px; /* Ajusta el tamaño del texto */
@@ -12,11 +18,6 @@
         padding: 20px; /* Ajusta el tamaño de las celdas */
     }
 </style>
-<%
-    ManagerDao managerDao = new ManagerDao();
-    AccountDto accountDto = managerDao.dataCompletManager(((LoginResponse) request.getSession().getAttribute("sessionAccount")).getToken());
-%>
-<main>
     <div class="container-main">
         <div id="section-user">
             <img class="img_user" src="views/manager/resource/User.png" alt="imgUser">
@@ -48,32 +49,85 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="ajax/ajax.js" type="text/javascript"></script>
 
 <script>
-  function downloadPDF() {
-        const url = `http://localhost:8080/Raccon_Brothers/ControllerManager?downloadPDF=true`;
+ function downloadPDF() {
+    const url = `http://localhost:8080/Raccon_Brothers/ControllerManager?downloadPDF=true`;
 
-        fetch(url, { method: 'GET' })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Ocurrió un error al descargar el PDF.');
-                }
-                return response.blob();
-            })
-            .then(blob => {
-                const url = URL.createObjectURL(blob);
+    // Mostrar mensaje antes de la descarga
+    alert('La descarga del PDF comenzará en breve. Por favor, selecciona la ubicación para guardarlo.');
 
-                // Abrir el PDF en una nueva pestaña
-                window.open(url, '_blank');
+    fetch(url, { method: 'GET' })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Ocurrió un error al descargar el PDF.');
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            const url = URL.createObjectURL(blob);
 
-                URL.revokeObjectURL(url);
-            })
-            .catch(error => {
-                console.error('Error al descargar el PDF:', error);
-                alert('Error al descargar el PDF. Por favor, inténtelo de nuevo más tarde.');
-            });
-    }
+      
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'ListadoDeEmpleado.pdf'; 
+            document.body.appendChild(link);
+            
+            // Hacer clic en el enlace para iniciar la descarga
+            link.click();
+            
+            // Remover el enlace después de la descarga
+            document.body.removeChild(link);
+
+            URL.revokeObjectURL(url);
+
+            // Mostrar mensaje después de la descarga
+            alert('La descarga del PDF ha finalizado.');
+        })
+        .catch(error => {
+            console.error('Error al descargar el PDF:', error);
+            alert('Error al descargar el PDF. Por favor, inténtelo de nuevo más tarde.');
+        });
+}
+function downloadExcel() {
+    const url = `http://localhost:8080/Raccon_Brothers/ControllerManager?downloadExcel=true`;
+
+    // Mostrar mensaje antes de la descarga
+    alert('La descarga del archivo Excel comenzará en breve. Por favor, selecciona la ubicación para guardarlo.');
+
+    fetch(url, { method: 'GET' })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Ocurrió un error al descargar el archivo Excel.');
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            const url = URL.createObjectURL(blob);
+
+            // Crear un enlace para la descarga
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'listadoEmpleado.xlsx'; 
+            document.body.appendChild(link);
+
+      
+            link.click();
+
+           
+            document.body.removeChild(link);
+
+            URL.revokeObjectURL(url);
+
+            // Mostrar mensaje después de la descarga
+            alert('La descarga del archivo Excel ha finalizado.');
+        })
+        .catch(error => {
+            console.error('Error al descargar el archivo Excel:', error);
+            alert('Error al descargar el archivo Excel. Por favor, inténtelo de nuevo más tarde.');
+        });
+}
+
                     // Declarar observer antes de usarlo
                     const observer = new MutationObserver((mutationsList, observer) => {
                         for (const mutation of mutationsList) {

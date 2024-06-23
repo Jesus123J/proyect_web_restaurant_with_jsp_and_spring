@@ -10,6 +10,7 @@ import com.utp.management_web_application.data.dto.AccountDto;
 import com.utp.management_web_application.data.dto.ManagerEmployeeDto;
 import com.utp.management_web_application.data.rest.LoginResponse;
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -27,6 +28,10 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimpleXlsxReportConfiguration;
 import org.json.JSONObject;
 
 /**
@@ -42,7 +47,9 @@ public class ControllerManager extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-       String downloadPDF = request.getParameter("downloadPDF");
+        String downloadPDF = request.getParameter("downloadPDF");
+        String downloadExcel = request.getParameter("downloadExcel");
+
         if (downloadPDF != null && downloadPDF.equals("true")) {
             try {
                 // Conexión a la base de datos (simulado aquí)
@@ -64,22 +71,70 @@ public class ControllerManager extends HttpServlet {
                 // Configurar la respuesta para enviar el PDF
                 response.setContentType("application/pdf");
                 response.setContentLength(pdfBytes.length);
-                
-                // Configurar el encabezado para descargar el archivo con un nombre específico
                 String headerKey = "Content-Disposition";
                 String headerValue = String.format("attachment; filename=\"%s\"", "nombre_del_archivo.pdf");
                 response.setHeader(headerKey, headerValue);
 
-                // Escribir el contenido del archivo al flujo de salida de la respuesta
                 OutputStream outputStream = response.getOutputStream();
                 outputStream.write(pdfBytes);
                 outputStream.close();
-
-                conn.close(); // Cerrar la conexión a la base de datos
+                return;
 
             } catch (Exception e) {
                 e.printStackTrace();
                 throw new ServletException("Error al generar el PDF", e);
+            }
+        } else if (downloadExcel != null && downloadExcel.equals("true")) {
+            try {
+                // Conexión a la base de datos (simulado aquí)
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/racoon_brothers", "root", "");
+
+                // Ruta al archivo .jasper compilado
+                String jasperPath = getServletContext().getRealPath("Blank_A4.jasper");
+
+                // Parámetros del reporte (si es necesario)
+                Map<String, Object> params = new HashMap<>();
+
+                // Cargar el reporte Jasper
+                JasperPrint jasperPrint = JasperFillManager.fillReport(jasperPath, params, conn);
+
+                // Configurar el exportador para Excel
+                JRXlsxExporter exporter = new JRXlsxExporter();
+           
+                // Configurar el output stream
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+                exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(byteArrayOutputStream));
+
+                SimpleXlsxReportConfiguration configuration = new SimpleXlsxReportConfiguration();
+                configuration.setOnePagePerSheet(true);
+                configuration.setRemoveEmptySpaceBetweenRows(true);
+                configuration.setDetectCellType(true);
+                configuration.setWhitePageBackground(false);
+                exporter.setConfiguration(configuration);
+
+                // Exportar el reporte a Excel
+                exporter.exportReport();
+
+                // Obtener los bytes del archivo Excel
+                byte[] excelBytes = byteArrayOutputStream.toByteArray();
+
+                // Configurar la respuesta para enviar el archivo Excel
+                response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+                response.setContentLength(excelBytes.length);
+                String headerKey = "Content-Disposition";
+                String headerValue = String.format("attachment; filename=\"%s\"", "nombre_del_archivo.xlsx");
+                response.setHeader(headerKey, headerValue);
+
+                OutputStream outputStream = response.getOutputStream();
+                outputStream.write(excelBytes);
+                outputStream.close();
+                return;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new ServletException("Error al generar el archivo Excel", e);
             }
         }
 
