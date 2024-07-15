@@ -13,6 +13,7 @@
     <% if (typeRole != null) {
             if (typeRole.equalsIgnoreCase("JEFE")) {
     %>
+    
     <link href="views/admin/css/cssAdmin.css" rel="stylesheet" type="text/css"/>
     <script src="views/admin/js/jsAdmin.js" type="text/javascript"></script>
     <%  } else if (typeRole.equalsIgnoreCase("EMPLEADO")) {%>
