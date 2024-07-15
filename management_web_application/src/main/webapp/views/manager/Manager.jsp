@@ -9,7 +9,7 @@
 %>
 <main>
 <script src="ajax/ajax.js" type="text/javascript"></script>
-
+<body>
     <div class="container-main">
         <div id="section-user">
             <img class="img_user" src="views/manager/resource/User.png" alt="imgUser">
@@ -29,11 +29,11 @@
         </div>
         <div id="content">
             <div class="container-info" id="float">
-
+                <!-- Aquí se agregarán los contenidos dinámicamente -->
             </div>
         </div>
     </div>
-</main>
+</body>
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
