@@ -1,139 +1,140 @@
- /* Reset y estilos base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
 
-        /* Estilo del cuerpo */
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: linear-gradient(to right, #e32929, #f9b438);
-        }
+/* Estilo del cuerpo */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #e32929, #f9b438);
+}
 
-        /* Contenedor principal */
-        .container {
-            display: flex;
-            width: 80%;
-            max-width: 1200px;
-            background-color: #fff;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-        }
+/* Contenedor principal */
+.container {
+    display: flex;
+    width: 90%;
+    height: 90vh;  /* Aumentado para más altura */
+    max-width: 1400px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
 
-        /* Contenedor de los formularios */
-        .form-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 20px;
-        }
+/* Contenedor de los formularios */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;  /* Aumentado para más altura */
+}
 
-        /* Estilos para el formulario izquierdo */
-        .left {
-            width: 30%;
-            background-color: #f3f3f3;
-        }
+/* Estilos para el formulario izquierdo */
+.left {
+    flex: 0 0 30%;  /* Aumentado para más ancho */
+    margin-left: 20px;
+    background-color: #f3f3f3;
+}
 
-        .left form {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-        }
+.left form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 
-        .admin-button {
-            width: 80%;
-            padding: 15px;
-            margin: 10px 0;
-            border: none;
-            background: linear-gradient(to right, #e32929, #f9b438);
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
+.admin-button {
+    width: 80%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    background: linear-gradient(to right, #e32929, #f9b438);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
 
-        .admin-button:hover {
-            background: linear-gradient(to right, #d92626, #e69929);
-        }
+.admin-button:hover {
+    background: linear-gradient(to right, #d92626, #e69929);
+}
 
-        /* Estilos para el formulario derecho */
-        .right {
-            width: 70%;
-            background-color: #ffffff;
-        }
+/* Estilos para el formulario derecho */
+.right {
+    flex: 0 0 70%;  /* Aumentado para complementar el ancho */
+    background-color: #ffffff;
+}
 
-        .right form {
-            display: flex;
-            flex-direction: column;
-        }
+.right form {
+    display: flex;
+    flex-direction: column;
+}
 
-        .right form h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+.right form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
 
-        .right form label {
-            margin-bottom: 15px;
-            display: flex;
-            flex-direction: column;
-        }
+.right form label {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
 
-        .right form label input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+.right form label input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-        .right form .button-group {
-            display: flex;
-            justify-content: space-between;
-        }
+.right form .button-group {
+    display: flex;
+    justify-content: space-between;
+}
 
-        .right form .button-group button {
-            flex: 1;
-            margin: 5px;
-            padding: 10px;
-            border: none;
-            background: linear-gradient(to right, #e32929, #f9b438);
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
+.right form .button-group button {
+    flex: 1;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background: linear-gradient(to right, #e32929, #f9b438);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
 
-        .right form .button-group button:hover {
-            background: linear-gradient(to right, #d92626, #e69929);
-        }
+.right form .button-group button:hover {
+    background: linear-gradient(to right, #d92626, #e69929);
+}
 
-        /* Estilos para la tabla */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
-        table, th, td {
-            border: 1px solid #ccc;
-        }
+table, th, td {
+    border: 1px solid #ccc;
+}
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
+th, td {
+    padding: 10px;
+    text-align: left;
+}
 
-        th {
-            background-color: #f3f3f3;
-        }
+th {
+    background-color: #f3f3f3;
+}

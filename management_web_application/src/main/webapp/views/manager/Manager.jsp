@@ -9,15 +9,7 @@
 %>
 <main>
 <script src="ajax/ajax.js" type="text/javascript"></script>
-<style>
-    .table-light {
-        font-size: 16px; /* Ajusta el tamaño del texto */
-        color: black; /* Cambia el color del texto a negro */
-    }
-    .table-light td {
-        padding: 20px; /* Ajusta el tamaño de las celdas */
-    }
-</style>
+
     <div class="container-main">
         <div id="section-user">
             <img class="img_user" src="views/manager/resource/User.png" alt="imgUser">
