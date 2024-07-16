@@ -159,8 +159,8 @@ async function changeContainerShowEmployeeManager(verificaion) {
         const response = await fetch('http://localhost:8080/Raccon_Brothers/ControllerManager', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
-
+               'Content-Type': 'application/json',
+               'Authorization' : 'eyJpZEFjY291bnQiOjQsImlkUGVyc29uIjo0LCJzdGF0dXMiOjEsInVzZXJuYW1lIjoieWFucGllcmNhdmVyb0BnbWFpbC5jb20iLCJuYW1lIjoiWUFOUElFUiIsImxhc3RuYW1lIjoiQ0FWRVJPIiwibW90aGVyTGFzdG5hbWUiOiJQT1JSTyIsImlkUm9sZSI6NCwicm9sZVR5cGUiOiJFTVBMRUFETyJ9'
             },
             body: JSON.stringify({
                 action: action,
@@ -239,3 +239,22 @@ async function changeContainerShowOrderManager() {
     }
 }
 
+
+async function componentContext(token) {
+    try {
+        const response = await fetch('http://localhost:9091/employee/register-entry', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization' : token
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        console.log(response);
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
+}

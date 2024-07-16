@@ -95,16 +95,11 @@
                     <p>S/13.00</p>
 
                 </div>
-
-
-
-
                 <div class="game-item" data-id="6">
                     <img src="https://www.distribuidoramaryori.com/wp-content/uploads/2016/05/gaseosas-coca-cola-y-inca-kola.jpg" alt="Juego 6">
                     <h2>Inka Cola o Coca cola de 600ml</h2>
                     <h2>Precio</h2>
                     <p>S/3.50</p>
-
                 </div>
                 <div class="game-item" data-id="7">
                     <img src="https://tofuu.getjusto.com/orioneat-prod/h8DJqdbWKxmAvs4Xn-6715.png" alt="Juego 7">
@@ -121,6 +116,7 @@
                     <h2>Precio</h2>
                     <p>S/1.50</p>
                 </div>
+                
                 <!-- Secciones de productos -->
             </section>
         </main>
