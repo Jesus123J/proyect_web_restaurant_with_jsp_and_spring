@@ -50,16 +50,12 @@
     <h2>Pedidos</h2>
     <label class="l-pedido">Insertar nombre del cliente</label>
     <input class="nombre" type="text" placeholder="Nombre">
-    <button type="button" class="btn btn-primary b-pedido" onclick="openModal('<%= token%>')">Ver productos</button>
-    <label class="l-pedido">Precio total: <p align="center">12,20</p></label>
-    <button type="button" class="btn btn-primary b-pedido" onclick="openModal('<%= token%>')">Registrar pedido</button>
+    <button type="button" class="btn btn-primary b-pedido" onclick="openModal()">Ver productos</button>
+    <label class="l-pedido">Precio total: <p align="center">12.20</p></label>
+    <button type="button" class="btn btn-primary b-pedido" onclick="openModal()">Registrar pedido</button>
 </div>
 
-
-<script>
-    console.log('sssssssssssssssssssssssssssssssss :::::::::::::: ' + <%= token%>);
-</script>
-<div class="modal" id="exampleModalCenter" >
+<div class="modal" id="exampleModalCenter">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

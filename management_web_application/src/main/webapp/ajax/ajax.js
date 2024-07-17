@@ -260,6 +260,8 @@ async function componentContext(token) {
 
 
 }
+let precioTotal = 0.00; // Inicializar el precio total con el valor actual
+
 async function listaProductos(token) {
     try {
         console.log(token);
@@ -289,7 +291,7 @@ async function listaProductos(token) {
                                 <td>${product.code}</td>
                                 <td>${product.name}</td>
                                 <td>${product.price}</td>
-                                <td><button class="btn btn-primary" onclick="agregarProducto(${product.id})">Agregar</button></td>
+                                <td><button class="btn btn-primary" onclick="agregarProducto(${product.price})">Agregar</button></td>
                               </tr>`;
         });
 
@@ -314,7 +316,12 @@ function closeModal() {
 }
 
 // Función para manejar el evento de agregar producto
-function agregarProducto(productId) {
-    console.log(`Producto con ID ${productId} agregado.`);
-    // Aquí puedes agregar la lógica para manejar el producto agregado
+function agregarProducto(productPrice) {
+    console.log(`Producto con precio ${productPrice} agregado.`);
+    actualizarPrecioTotal(productPrice);
+}
+
+function actualizarPrecioTotal(price) {
+    precioTotal += price;
+    document.querySelector('.l-pedido p').textContent = precioTotal.toFixed(2);
 }
