@@ -575,7 +575,9 @@
                                                         }
                                                     </script>
                                                     <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
-                                                    <button class="btn btn-success" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <button class="btn btn-danger" onclick="" >Generar PDF</button>
+                                                    <button class="btn btn-success" onclick="" >Generar Excel</button>
                                                 </div>
                                             </div>
 
@@ -594,8 +596,15 @@
                                                             <!-- Aquí se insertan las filas dinámicamente -->
                                                         </tbody>
                                                     </table>
-                                                    <button class="btn btn-primary" onclick="addRow('salidaTable')">Agregar</button>
-                                                    <button class="btn btn-success" onclick="">Generar Reporte</button>
+                                                    <script>
+                                                        function ga(variable) {
+                                                            console.log(variable);
+                                                        }
+                                                    </script>
+                                                   <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
+                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <button class="btn btn-danger" onclick="" >Generar PDF</button>
+                                                    <button class="btn btn-success" onclick="" >Generar Excel</button>
                                                 </div>
                                             </div>
 
@@ -614,8 +623,15 @@
                                                             <!-- Aquí se insertan las filas dinámicamente -->
                                                         </tbody>
                                                     </table>
-                                                    <button class="btn btn-primary" onclick="addRow('faltasTable')">Agregar</button>
-                                                    <button class="btn btn-success" onclick="">Generar Reporte</button>
+                                                    <script>
+                                                        function ga(variable) {
+                                                            console.log(variable);
+                                                        }
+                                                    </script>
+                                                    <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
+                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <button class="btn btn-danger" onclick="" >Generar PDF</button>
+                                                    <button class="btn btn-success" onclick="" >Generar Excel</button>
                                                 </div>
                                             </div>
 
@@ -637,8 +653,15 @@
 
                                                         </tbody>
                                                     </table>
-                                                    <button class="btn btn-primary" onclick="addRow('descansosTable')">Agregar</button>
-                                                    <button class="btn btn-success" onclick="">Generar Reporte</button>
+                                                    <script>
+                                                        function ga(variable) {
+                                                            console.log(variable);
+                                                        }
+                                                    </script>
+                                                    <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
+                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <button class="btn btn-danger" onclick="" >Generar PDF</button>
+                                                    <button class="btn btn-success" onclick="" >Generar Excel</button>
                                                 </div>
                                             </div>
 
@@ -682,6 +705,5 @@
                                     </body>
 
                                     </main>
-
 
 
