@@ -159,8 +159,8 @@ async function changeContainerShowEmployeeManager(verificaion) {
         const response = await fetch('http://localhost:8080/Raccon_Brothers/ControllerManager', {
             method: 'POST',
             headers: {
-               'Content-Type': 'application/json',
-               'Authorization' : 'eyJpZEFjY291bnQiOjQsImlkUGVyc29uIjo0LCJzdGF0dXMiOjEsInVzZXJuYW1lIjoieWFucGllcmNhdmVyb0BnbWFpbC5jb20iLCJuYW1lIjoiWUFOUElFUiIsImxhc3RuYW1lIjoiQ0FWRVJPIiwibW90aGVyTGFzdG5hbWUiOiJQT1JSTyIsImlkUm9sZSI6NCwicm9sZVR5cGUiOiJFTVBMRUFETyJ9'
+                'Content-Type': 'application/json',
+                'Authorization': 'eyJpZEFjY291bnQiOjQsImlkUGVyc29uIjo0LCJzdGF0dXMiOjEsInVzZXJuYW1lIjoieWFucGllcmNhdmVyb0BnbWFpbC5jb20iLCJuYW1lIjoiWUFOUElFUiIsImxhc3RuYW1lIjoiQ0FWRVJPIiwibW90aGVyTGFzdG5hbWUiOiJQT1JSTyIsImlkUm9sZSI6NCwicm9sZVR5cGUiOiJFTVBMRUFETyJ9'
             },
             body: JSON.stringify({
                 action: action,
@@ -246,7 +246,7 @@ async function componentContext(token) {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization' : token
+                'Authorization': token
             }
         });
 
@@ -257,6 +257,57 @@ async function componentContext(token) {
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
-    
-   
+
+
+}
+async function listaProductos(token) {
+    try {
+        console.log(token);
+        const response = await fetch('http://localhost:9091/manager/product/list', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+        // Crear la tabla y añadir los datos de los productos
+        let tableHtml = '<table class="table">';
+        tableHtml += '<thead><tr><th>ID</th><th>Código</th><th>Nombre</th><th>Precio</th></tr></thead>';
+        tableHtml += '<tbody>';
+
+        data.managerProducts.forEach(product => {
+            tableHtml += `<tr>
+                                <td>${product.id}</td>
+                                <td>${product.code}</td>
+                                <td>${product.name}</td>
+                                <td>${product.price}</td>
+                              </tr>`;
+        });
+
+        tableHtml += '</tbody></table>';
+
+        // Insertar la tabla en el modal
+        document.querySelector('#exampleModalCenter .modal-body').innerHTML = tableHtml;
+
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
+}
+
+function openModal(token) {
+    document.getElementById('exampleModalCenter').style.display = 'flex';
+    console.log("Puto + " +token);
+    listaProductos(token); // Reemplaza con el token real
+}
+
+function closeModal() {
+    document.getElementById('exampleModalCenter').style.display = 'none';
 }
