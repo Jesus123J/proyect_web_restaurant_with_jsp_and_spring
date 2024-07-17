@@ -280,7 +280,7 @@ async function listaProductos(token) {
 
         // Crear la tabla y añadir los datos de los productos
         let tableHtml = '<table class="table">';
-        tableHtml += '<thead><tr><th>ID</th><th>Código</th><th>Nombre</th><th>Precio</th></tr></thead>';
+        tableHtml += '<thead><tr><th>ID</th><th>Código</th><th>Nombre</th><th>Precio</th><th>Acción</th></tr></thead>';
         tableHtml += '<tbody>';
 
         data.managerProducts.forEach(product => {
@@ -289,6 +289,7 @@ async function listaProductos(token) {
                                 <td>${product.code}</td>
                                 <td>${product.name}</td>
                                 <td>${product.price}</td>
+                                <td><button class="btn btn-primary" onclick="agregarProducto(${product.id})">Agregar</button></td>
                               </tr>`;
         });
 
@@ -304,10 +305,16 @@ async function listaProductos(token) {
 
 function openModal(token) {
     document.getElementById('exampleModalCenter').style.display = 'flex';
-    console.log("Puto + " +token);
+    console.log("Puto + " + token);
     listaProductos(token); // Reemplaza con el token real
 }
 
 function closeModal() {
     document.getElementById('exampleModalCenter').style.display = 'none';
+}
+
+// Función para manejar el evento de agregar producto
+function agregarProducto(productId) {
+    console.log(`Producto con ID ${productId} agregado.`);
+    // Aquí puedes agregar la lógica para manejar el producto agregado
 }
