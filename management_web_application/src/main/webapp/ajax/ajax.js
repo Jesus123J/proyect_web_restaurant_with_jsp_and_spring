@@ -291,7 +291,7 @@ async function listaProductos(token) {
                                 <td>${product.code}</td>
                                 <td>${product.name}</td>
                                 <td>${product.price}</td>
-                                <td><button class="btn btn-primary" onclick="agregarProducto(${product.price})">Agregar</button></td>
+                                <td><button class="btn btn-primary" onclick="agregarProducto(${product})">Agregar</button></td>
                               </tr>`;
         });
 
@@ -315,13 +315,24 @@ function closeModal() {
     document.getElementById('exampleModalCenter').style.display = 'none';
 }
 
+//crear variables
+let ListaProductos;
+
+
 // Función para manejar el evento de agregar producto
-function agregarProducto(productPrice) {
-    console.log(`Producto con precio ${productPrice} agregado.`);
-    actualizarPrecioTotal(productPrice);
+function agregarProducto(producto) {
+    console.log(`Producto con precio ${producto} agregado.`);
+    ListaProductos.push(producto);
+    actualizarPrecioTotal(producto.price);
+    
 }
 
 function actualizarPrecioTotal(price) {
     precioTotal += price;
     document.querySelector('.l-pedido p').textContent = precioTotal.toFixed(2);
+}
+
+function registroPedido(){
+    console.log(ListaProductos);
+    
 }

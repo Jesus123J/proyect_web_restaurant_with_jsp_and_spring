@@ -52,7 +52,7 @@
     <input class="nombre" type="text" placeholder="Nombre">
     <button type="button" class="btn btn-primary b-pedido" onclick="openModal()">Ver productos</button>
     <label class="l-pedido">Precio total: <p align="center">12.20</p></label>
-    <button type="button" class="btn btn-primary b-pedido" onclick="openModal()">Registrar pedido</button>
+    <button type="button" class="btn btn-primary b-pedido" onclick="registroPedido()">Registrar pedido</button>
 </div>
 
 <div class="modal" id="exampleModalCenter">
