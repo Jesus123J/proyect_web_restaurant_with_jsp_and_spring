@@ -375,7 +375,7 @@
                                             width: 100%;
                                             margin-bottom: 1rem;
                                             background-color: #dc3545;
-                                            color: #dc3545;
+                                            color: black;
                                             border-collapse: collapse;
                                             border-radius: 0.5rem;
                                             overflow: hidden;
@@ -575,7 +575,7 @@
                                                         }
                                                     </script>
                                                     <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
-                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken()%>')" >Generar Reporte</button>
                                                     <button class="btn btn-danger" onclick="" >Generar PDF</button>
                                                     <button class="btn btn-success" onclick="" >Generar Excel</button>
                                                 </div>
@@ -601,8 +601,8 @@
                                                             console.log(variable);
                                                         }
                                                     </script>
-                                                   <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
-                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
+                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken()%>')" >Generar Reporte</button>
                                                     <button class="btn btn-danger" onclick="" >Generar PDF</button>
                                                     <button class="btn btn-success" onclick="" >Generar Excel</button>
                                                 </div>
@@ -629,7 +629,7 @@
                                                         }
                                                     </script>
                                                     <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
-                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken()%>')" >Generar Reporte</button>
                                                     <button class="btn btn-danger" onclick="" >Generar PDF</button>
                                                     <button class="btn btn-success" onclick="" >Generar Excel</button>
                                                 </div>
@@ -638,15 +638,10 @@
                                             <div class="row mt-5">
                                                 <div class="col">
                                                     <h2>Registro de descansos</h2>
-                                                    <table id="descansosTable" class="table table-bordered">
+                                                    <table id="descansosTable" class="table table-bordered" >
                                                         <thead>
                                                             <tr>
-                                                                <th>Apellidos</th>
-                                                                <th>Nombres</th>
-                                                                <th>Fecha</th>
                                                                 <th>Hora de Inicio</th>
-                                                                <th>Hora de Fin</th>
-                                                                <th>Acciones</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -658,8 +653,10 @@
                                                             console.log(variable);
                                                         }
                                                     </script>
-                                                    <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
-                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken() %>')" >Generar Reporte</button>
+                                                    <!-- addRow('ingresoTable') -->
+
+                                                    <button class="btn btn-primary" onclick="componentContext('<%=sessionAccount.getToken()%>')">Agregar</button>
+                                                    <button class="btn btn-dark" onclick="" >Generar Reporte</button>
                                                     <button class="btn btn-danger" onclick="" >Generar PDF</button>
                                                     <button class="btn btn-success" onclick="" >Generar Excel</button>
                                                 </div>
@@ -707,3 +704,8 @@
                                     </main>
 
 
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', () => {
+                                            componentLoadingTable('<%=sessionAccount.getToken()%>');
+                                        });
+                                    </script>

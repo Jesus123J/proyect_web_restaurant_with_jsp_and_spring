@@ -239,7 +239,45 @@ async function changeContainerShowOrderManager() {
     }
 }
 
+async function  componentLoadingTable(token) {
+    try {
+        const responseData = await fetch('http://localhost:9091/employee/dataEmployee',
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    }
+                });
 
+        responseDataEmployee = await  responseData.json();
+
+        const response = await fetch('http://localhost:9091/boss/attendance/employee/list?idAccount=' + responseDataEmployee.idAccount,
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'eyJpZEFjY291bnQiOjIsImlkUGVyc29uIjoyLCJzdGF0dXMiOjEsInVzZXJuYW1lIjoiamVzdXN0aGlhZ29AZ21haWwuY29tIiwibmFtZSI6IkpFU1VTIiwibGFzdG5hbWUiOiJUSElBR08iLCJtb3RoZXJMYXN0bmFtZSI6IlRPUlJFUyIsImlkUm9sZSI6Miwicm9sZVR5cGUiOiJKRUZFIn0='
+                    }
+                });
+
+        responseDatePicker = await response.json();
+        responseDatePicker.bossEmployeeHistoryAttendances.forEach(fecha => {
+            // Obtenemos el elemento tbody de la tabla
+            const tbody = document.querySelector('#descansosTable tbody');
+
+            // Crear una nueva fila con la fecha y hora actual
+            const row = document.createElement('tr');
+            const cell = document.createElement('td');
+            cell.textContent = fecha.entryTime;
+            row.appendChild(cell);
+            tbody.appendChild(row);
+        });
+
+    } catch (e) {
+        console.error('There was a problem with the fetch operation:', e);
+    }
+}
 async function componentContext(token) {
     try {
         const response = await fetch('http://localhost:9091/employee/register-entry', {
@@ -253,13 +291,33 @@ async function componentContext(token) {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
-        console.log(response);
+
+        const responseJson = await response.json();
+
+        // Mostrar mensaje de respuesta
+        alert(responseJson.message);
+        if (responseJson.status === 400) {
+            return;
+        }
+        // Obtener la fecha y hora actual
+        const currentDateTime = new Date();
+        const formattedDateTime = currentDateTime.toLocaleString(); // Formato legible de fecha y hora
+
+        // Obtenemos el elemento tbody de la tabla
+        const tbody = document.querySelector('#descansosTable tbody');
+
+        // Crear una nueva fila con la fecha y hora actual
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        cell.textContent = formattedDateTime;
+        row.appendChild(cell);
+        tbody.appendChild(row);
+
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
-
-
 }
+
 let precioTotal = 0.00; // Inicializar el precio total con el valor actual
 
 async function listaProductos(token) {
@@ -324,7 +382,7 @@ function agregarProducto(producto) {
     console.log(`Producto con precio ${producto} agregado.`);
     ListaProductos.push(producto);
     actualizarPrecioTotal(producto.price);
-    
+
 }
 
 function actualizarPrecioTotal(price) {
@@ -332,7 +390,32 @@ function actualizarPrecioTotal(price) {
     document.querySelector('.l-pedido p').textContent = precioTotal.toFixed(2);
 }
 
-function registroPedido(){
+function registroPedido() {
     console.log(ListaProductos);
-    
+
 }
+
+async function componentAsync(token) {
+    //El  clase fetch  es una libreria propia de javascript hace una promesa en el cual  espera la respusta
+    // method diferentes tipos :
+    //GET es de atraer 
+    //POST es de enviar algo
+
+    const responsesEmployee = await fetch('http://localhost:9091/boss/product/list',
+            {
+                method: 'GET',
+                headers: {
+                    'Content-type': '',
+                    'Authorization': token
+                },
+                body: JSON.stringify({
+                    action: ''
+                })
+            }
+    );
+
+    const responseJson = await responsesEmployee.json();
+
+
+}
+
