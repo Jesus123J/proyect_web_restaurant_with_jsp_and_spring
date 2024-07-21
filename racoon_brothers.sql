@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: db_racoon_brothers
+-- Host: 127.0.0.1    Database: racoon_brothers
 -- ------------------------------------------------------
--- Server version	8.1.0
+-- Server version	5.5.5-10.4.32-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -21,19 +21,19 @@
 
 DROP TABLE IF EXISTS `accounts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `accounts` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `code` varchar(45) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `id_role` int DEFAULT NULL,
+  `id_role` int(11) DEFAULT NULL,
   `enable` bit(1) DEFAULT NULL,
-  `status` int DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   `update_time` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `accounts` (
 
 LOCK TABLES `accounts` WRITE;
 /*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
-INSERT INTO `accounts` VALUES (1,NULL,'administrador','probando',1,_binary '',1,'2024-04-18 15:02:10.000','2024-05-10 03:37:08.775'),(2,'J240501194055','jesusthiago@gmail.com','J240501194055',2,_binary '\0',1,'2024-05-01 19:40:55.854','2024-05-01 19:40:55.854'),(3,'G240501202652','gerardojose@gmail.com','G240501202652',3,_binary '\0',1,'2024-05-01 20:26:52.782','2024-05-01 20:26:52.782'),(4,'y240507235308','yanpiercavero@gmail.com','y240507235308',4,_binary '\0',1,'2024-05-07 23:53:08.883','2024-05-07 23:53:08.883'),(5,'G240508162307','gonzalo@gmail.com','G240508162307',4,_binary '\0',1,'2024-05-08 16:23:07.675','2024-05-08 16:23:07.675'),(6,'P1715234495406','pablo@gmail.com','P1715234495406',3,_binary '\0',1,'2024-05-09 01:01:35.406','2024-05-09 01:01:35.406'),(7,'L1715305705925','caveroporroluis@gmail.com','L1715305705925',3,_binary '\0',1,'2024-05-09 20:48:25.925','2024-05-09 20:48:25.925'),(8,'L1715305959580','caveroporrolu@gmail.com','L1715305959580',3,_binary '\0',1,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580');
+INSERT INTO `accounts` VALUES (1,NULL,'administrador','probando',1,_binary '',1,'2024-04-18 15:02:10.000','2024-05-10 03:37:08.775'),(2,'J240501194055','jesusthiago@gmail.com','J240501194055',2,_binary '',1,'2024-05-01 19:40:55.854','2024-05-01 19:40:55.854'),(3,'G240501202652','gerardojose@gmail.com','12345',3,_binary '',1,'2024-05-01 20:26:52.000','2024-07-21 14:32:57.000'),(4,'y240507235308','yanpiercavero@gmail.com','y240507235308',4,_binary '',1,'2024-05-07 23:53:08.883','2024-05-07 23:53:08.883'),(5,'G240508162307','gonzalo@gmail.com','G240508162307',4,_binary '\0',1,'2024-05-08 16:23:07.675','2024-05-08 16:23:07.675'),(6,'P1715234495406','pablo@gmail.com','P1715234495406',3,_binary '',1,'2024-05-09 01:01:35.406','2024-05-09 01:01:35.406'),(7,'L1715305705925','caveroporroluis@gmail.com','L1715305705925',3,_binary '\0',1,'2024-05-09 20:48:25.925','2024-05-09 20:48:25.925'),(8,'L1715305959580','caveroporrolu@gmail.com','L1715305959580',3,_binary '\0',1,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580'),(9,'y24050723533','jose22','3333',4,_binary '',1,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580'),(10,'a2343243','jose22','3333',4,_binary '',1,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580'),(11,'a2343243','jose22','3333',4,_binary '',1,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580'),(12,'J1721515507405','gutierrezdelatorrej30@gmail.com','J1721515507405',NULL,_binary '\0',1,'2024-07-20 17:45:07.000','2024-07-20 17:45:07.000'),(13,'A1721515961419','gutierrezdelator0@gmail.com','A1721515961419',NULL,_binary '\0',1,'2024-07-20 17:52:41.000','2024-07-20 17:52:41.000'),(14,'J1721516057443','gutierrezdj30@gmail.com','J1721516057443',NULL,_binary '\0',1,'2024-07-20 17:54:17.000','2024-07-20 17:54:17.000'),(15,'J1721516424604','gutierrezdj30@gmail.com','J1721516424604',NULL,_binary '\0',1,'2024-07-20 18:00:24.000','2024-07-20 18:00:24.000'),(16,'J1721516443239','gutierrezdj30@gmail.com','J1721516443239',NULL,_binary '\0',1,'2024-07-20 18:00:43.000','2024-07-20 18:00:43.000'),(17,'J1721516812836','gutierrezdjjjjj@gmail.com','J1721516812836',NULL,_binary '\0',1,'2024-07-20 18:06:52.000','2024-07-20 18:06:52.000'),(18,'J1721517349866','gutie@gmail.com','J1721517349866',1,_binary '\0',1,'2024-07-20 18:15:49.000','2024-07-20 18:15:49.000'),(19,'T1721527354538','gutierreze@gmail.com','T1721527354538',4,_binary '\0',1,'2024-07-20 21:02:34.000','2024-07-20 21:02:34.000'),(20,'J1721528641364','gutieDelaTorre@gmail.com','J1721528641364',1,_binary '\0',1,'2024-07-20 21:24:01.000','2024-07-20 21:24:01.000'),(21,'J1721530599844','','1234',1,_binary '\0',1,'2024-07-20 21:56:39.000','2024-07-21 14:33:50.000'),(22,'J1721530643433','gutierrezdelatorrej39@gmail.com','J1721530643433',1,_binary '\0',1,'2024-07-20 21:57:23.000','2024-07-20 21:57:23.000'),(23,'PJ1721531562258','gutierrJuan@gmail.com','222222222222',4,_binary '\0',1,'2024-07-20 22:12:42.000','2024-07-21 14:45:17.000'),(24,'D1721538906862','admiaaaaaan@example.com','D1721538906862',4,_binary '\0',1,'2024-07-21 00:15:06.000','2024-07-21 00:15:06.000'),(25,'Y1721539225449','adminAAAAA@example.com','Y1721539225449',3,_binary '\0',1,'2024-07-21 00:20:25.000','2024-07-21 00:20:25.000'),(26,'J1721590554808','gjesusthiago@gmail.com','123456',4,_binary '\0',1,'2024-07-21 14:35:54.000','2024-07-21 14:51:13.000'),(27,'JC1721591606451','josecarloscaro62@gmail.com','JC1721591606451',3,_binary '\0',1,'2024-07-21 14:53:26.000','2024-07-21 14:53:26.000'),(28,'J1721591933949','josecarloscruzcaro62@gmail.com','J1721591933949',3,_binary '\0',1,'2024-07-21 14:58:53.000','2024-07-21 14:58:53.000');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,14 +52,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `history_attendances`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `history_attendances` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `id_account` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_account` bigint(20) DEFAULT NULL,
   `entry_time` datetime(3) DEFAULT NULL,
   `departure_time` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `history_attendances` (
 
 LOCK TABLES `history_attendances` WRITE;
 /*!40000 ALTER TABLE `history_attendances` DISABLE KEYS */;
-INSERT INTO `history_attendances` VALUES (12,4,'2024-05-06 00:47:48.064','2024-05-06 15:55:54.245'),(13,4,'2024-05-07 16:17:41.840','2024-05-07 16:17:47.659'),(14,4,'2024-05-08 16:18:29.720','2024-05-08 16:19:16.257'),(16,5,'2024-05-08 17:22:47.369','2024-05-08 17:22:48.971');
+INSERT INTO `history_attendances` VALUES (12,4,'2024-05-06 00:47:48.064','2024-05-06 15:55:54.245'),(13,4,'2024-05-07 16:17:41.840','2024-05-07 16:17:47.659'),(14,4,'2024-05-08 16:18:29.720','2024-05-08 16:19:16.257'),(16,5,'2024-05-08 17:22:47.369','2024-05-08 17:22:48.971'),(17,4,'2024-07-15 09:38:25.000',NULL),(18,4,'2024-07-16 09:25:07.000',NULL),(19,4,'2024-07-20 10:15:39.000',NULL);
 /*!40000 ALTER TABLE `history_attendances` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,14 +78,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `history_stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `history_stock` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `id_stock` int DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_stock` int(11) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `unit` varchar(45) DEFAULT NULL,
   `price_unit` double(6,2) DEFAULT NULL,
-  `amount` int DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -107,11 +107,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `new_table`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `new_table` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `id_account` bigint DEFAULT NULL,
-  `id_person` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_account` bigint(20) DEFAULT NULL,
+  `id_person` bigint(20) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `read` bit(1) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
@@ -135,12 +135,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `order_products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_products` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `id_record_orders` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_record_orders` bigint(20) DEFAULT NULL,
   `product_code` varchar(45) DEFAULT NULL,
-  `amount_product` int DEFAULT NULL,
+  `amount_product` int(11) DEFAULT NULL,
   `price_products` double(6,2) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   `update_time` datetime(3) DEFAULT NULL,
@@ -164,10 +164,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `otp`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `otp` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `id_account` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_account` bigint(20) DEFAULT NULL,
   `otp` varchar(255) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   `expiration_time` datetime(3) DEFAULT NULL,
@@ -191,20 +191,20 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `people`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `people` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   `lastname` varchar(50) DEFAULT NULL,
   `mother_lastname` varchar(50) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `cellphone` varchar(9) DEFAULT NULL,
   `dni` varchar(45) DEFAULT NULL,
-  `id_account` bigint DEFAULT NULL,
+  `id_account` bigint(20) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   `update_time` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -213,7 +213,7 @@ CREATE TABLE `people` (
 
 LOCK TABLES `people` WRITE;
 /*!40000 ALTER TABLE `people` DISABLE KEYS */;
-INSERT INTO `people` VALUES (1,'LUIS YANPIER','CAVERO','PORRO','caveroporroluis@gmail.com','950793719','99999999',1,NULL,'2024-05-10 03:33:56.648'),(2,'JESUS','THIAGO','TORRES','jesusthiago@gmail.com','999777888','99988877',2,'2024-05-01 19:40:55.809',NULL),(3,'GERARDO','JOSE','ALVAREX','gerardojose@gmail.com','999777887','99988876',3,'2024-05-01 20:26:52.780',NULL),(4,'YANPIER','CAVERO','PORRO','yanpiercavero@gmail.com','99977788','99988874',4,'2024-05-07 23:53:08.880','2024-05-09 01:04:55.647'),(5,'GONZALO','GONZALEZ','GARCIA','gonzalo@gmail.com','99977785','99988879',5,'2024-05-08 16:23:07.674','2024-05-08 16:23:07.674'),(6,'PABLO','PEREZ','PONTE','pablo@gmail.com','99977787','99988878',6,'2024-05-09 01:01:35.404','2024-05-09 01:01:35.404'),(7,'LUIS','CAVERO','PORRO','caveroporrol@gmail.com','950793717','73941627',7,'2024-05-09 20:48:25.922','2024-05-09 20:48:25.922'),(8,'LUI','CAVER','PORR','caveroporrolu@gmail.com','95079371','7394162',8,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580');
+INSERT INTO `people` VALUES (1,'LUIS YANPIER','CAVERO','PORRO','caveroporroluis@gmail.com','950793719','99999999',1,NULL,'2024-05-10 03:33:56.648'),(2,'JESUS','THIAGO','TORRES','jesusthiago@gmail.com','999777888','99988877',2,'2024-05-01 19:40:55.809',NULL),(3,'GERARDO','JOSE','HOLA','gerardojose@gmail.com','999777887','99988876',3,'2024-05-01 20:26:52.000','2024-07-21 14:04:29.000'),(4,'YANPIER','CAVERO','PORRO','yanpiercavero@gmail.com','99977788','99988874',4,'2024-05-07 23:53:08.880','2024-05-09 01:04:55.647'),(5,'GONZALO','GONZALEZ','GARCIA','gonzalo@gmail.com','99977785','99988879',5,'2024-05-08 16:23:07.674','2024-05-08 16:23:07.674'),(6,'PABLO','PEREZ','PONTE','pablo@gmail.com','99977787','99988878',6,'2024-05-09 01:01:35.404','2024-05-09 01:01:35.404'),(7,'LUIS','CAVERO','PORRO','caveroporrol@gmail.com','950793717','73941627',7,'2024-05-09 20:48:25.922','2024-05-09 20:48:25.922'),(8,'LUI','CAVER','PORR','caveroporrolu@gmail.com','95079371','7394162',8,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580'),(9,'Pepe','Juan','mami','gutierre@loal','34343443','3434344',9,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580'),(10,'Antn','Laura','pepe','lizet@gmail','23423432','3333333',10,'2024-05-09 20:52:39.580','2024-05-09 20:52:39.580'),(11,'JOSEPH','GUTIERREZ','DE LA TORRE','gutierrezdelatorrej30@gmail.com','3434930','73321206',12,'2024-07-20 17:45:07.000','2024-07-20 17:45:07.000'),(12,'ADRIANO','GUTIERREZ','DE LA TORRE','gutierrezdelator0@gmail.com','3434333','9090900',13,'2024-07-20 17:52:41.000','2024-07-20 17:52:41.000'),(13,'JOSEPH','GUTIERREZZZZ','DE LA TORREEE','gutierrezdj30@gmail.com','927324123','73321233',16,'2024-07-20 18:00:43.000','2024-07-20 18:00:43.000'),(14,'JESUS','ZZZZZZZZZZZZZZ','ZZZZZZZZZZZZZ','gutierrezdjjjjj@gmail.com','927111111','999999',17,'2024-07-20 18:06:52.000','2024-07-20 18:06:52.000'),(15,'JESUS','U','U','gutie@gmail.com','927121111','111111',18,'2024-07-20 18:15:49.000','2024-07-20 18:15:49.000'),(16,'THIAGO','GUTI','MOTHER','gutierreze@gmail.com','1111','73324206',19,'2024-07-20 21:02:34.000','2024-07-20 21:02:34.000'),(17,'JESUS','UY','U','gutieDelaTorre@gmail.com','960546170','66323945',20,'2024-07-20 21:24:01.000','2024-07-20 21:24:01.000'),(18,'JESUS','','U','','','',21,'2024-07-20 21:56:39.000','2024-07-20 21:56:39.000'),(19,'JESUS','GUTIERREZZZZ','DE LA TORRE','gutierrezdelatorrej39@gmail.com','9273999','73321239',22,'2024-07-20 21:57:23.000','2024-07-20 21:57:23.000'),(20,'PATRICIA JHOANA','SANCHES','CHERO','gutierrJuan@gmail.com','111111234','734421304',23,'2024-07-20 22:12:42.000','2024-07-20 22:12:42.000'),(21,'DORIS','ROSSE','AMIGA','admiaaaaaan@example.com','43454212','1223344',24,'2024-07-21 00:15:06.000','2024-07-21 00:15:06.000'),(22,'YOHANA','JUNIOR','ENAMPRADPS','adminAAAAA@example.com','943999234','13412456',25,'2024-07-21 00:20:25.000','2024-07-21 00:20:25.000'),(23,'JESUS','THIAGO YUME','GUTIERREZ','gjesusthiago@gmail.com','9278904','73343217',26,'2024-07-21 14:35:54.000','2024-07-21 14:35:54.000'),(24,'JOSE CARLOS','CRUZ','CARO','josecarloscaro62@gmail.com','961441040','75349566',27,'2024-07-21 14:53:26.000','2024-07-21 14:53:26.000'),(25,'JOSE','CRUZ','DE LAUTA','josecarloscruzcaro62@gmail.com','324342123','33412234',28,'2024-07-21 14:58:53.000','2024-07-21 14:58:53.000');
 /*!40000 ALTER TABLE `people` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,16 +223,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(45) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `price` double(6,2) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   `update_time` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -241,7 +241,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'H20000','hamburguesa con doble carne',3.50,'2024-05-01 21:39:45.019','2024-05-01 21:39:45.019'),(2,'H200001','hamburguesa con queso',2.50,'2024-05-07 02:00:31.350','2024-05-07 02:00:31.350'),(3,'H200002','hamburguesa con pollo',2.50,'2024-05-07 02:06:47.667','2024-05-07 02:06:47.667');
+INSERT INTO `products` VALUES (1,'H20000','hamburguesa con doble carne',3.50,'2024-05-01 21:39:45.019','2024-05-01 21:39:45.019'),(2,'H200001','hamburguesa con queso',2.50,'2024-05-07 02:00:31.350','2024-05-07 02:00:31.350'),(3,'H200002','hamburguesa con pollo',2.50,'2024-05-07 02:06:47.667','2024-05-07 02:06:47.667'),(4,'U2323','Hamburgueza de la cerrona',7.00,'2024-07-21 16:25:09.000','2024-07-21 16:25:09.000');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,13 +251,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `record_notices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `record_notices` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `id_account` bigint DEFAULT NULL,
-  `id_person` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_account` bigint(20) DEFAULT NULL,
+  `id_person` bigint(20) DEFAULT NULL,
   `description` varchar(200) DEFAULT NULL,
-  `read_boss` int DEFAULT NULL,
+  `read_boss` int(11) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   `update_time` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -280,12 +280,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `record_orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `record_orders` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `order_code` varchar(45) DEFAULT NULL,
   `client_name` varchar(100) DEFAULT NULL,
-  `id_account` bigint DEFAULT NULL,
+  `id_account` bigint(20) DEFAULT NULL,
   `order_price` double(6,2) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -308,14 +308,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `requests`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `requests` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `fullName` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `subject` varchar(50) DEFAULT NULL,
   `details` varchar(500) DEFAULT NULL,
-  `read_request` int DEFAULT NULL,
+  `read_request` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -335,9 +335,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `roles` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` enum('SUPERADMIN','JEFE','GERENTE','EMPLEADO') DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
@@ -360,13 +360,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stock` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `unit` varchar(45) DEFAULT NULL,
   `price_unit` double(6,2) DEFAULT NULL,
-  `amount` int DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
   `create_time` datetime(3) DEFAULT NULL,
   `update_time` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -392,4 +392,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-15  1:06:15
+-- Dump completed on 2024-07-21 16:39:15
