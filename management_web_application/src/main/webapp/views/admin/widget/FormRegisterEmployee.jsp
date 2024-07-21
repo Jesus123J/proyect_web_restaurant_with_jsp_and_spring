@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+
 <form>
     <h2>Crear Empleados</h2>
     <label>
@@ -45,19 +46,24 @@
     </div>
 </form>
 <h2>Lista de Empleados</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Apellido Paterno</th>
-            <th>Apellido Materno</th>
-            <th>Email</th>
-            <th>Celular</th>
-            <th>DNI</th>
-            <th>Rol</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Aquí se agregarán las filas de empleados dinámicamente -->
-    </tbody>
-</table>
+<div class="outer-wrapper">
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>DNI</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán las filas de empleados dinámicamente -->
+            </tbody>
+        </table>
+
+    </div>
+</div>

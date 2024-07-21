@@ -9,6 +9,7 @@ import com.utp.management_web_application.data.dto.Account;
 import com.utp.management_web_application.data.rest.LoginRequest;
 import com.utp.management_web_application.data.rest.LoginResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +20,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import javax.validation.ConstraintViolation;
+import org.json.JSONObject;
 
 /**
  *
@@ -66,7 +68,7 @@ public class ControllerLogin extends HttpServlet {
                     request.setAttribute("pages", "views/auth/Auth.jsp");
                     request.setAttribute("path", request.getServletPath());
                     if (sessionAccount.getStatus() == 401) {
-                         request.setAttribute("errors", sessionAccount.getMessage());
+                        request.setAttribute("errors", sessionAccount.getMessage());
                         request.getRequestDispatcher("index.jsp").forward(request, response);
                     } else {
                         if (sessionAccount.getRoleType().equalsIgnoreCase("JEFE")) {

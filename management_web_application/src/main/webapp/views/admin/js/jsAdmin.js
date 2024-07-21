@@ -4,3 +4,11 @@
  */
 
 
+ let cargarComponent = async () => {
+     
+     
+ };
+ 
+ let llenarComponentTable = {
+   
+ };

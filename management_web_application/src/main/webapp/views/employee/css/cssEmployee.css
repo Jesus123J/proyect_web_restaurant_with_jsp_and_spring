@@ -98,7 +98,7 @@
             .intro, .game-list, .shopping-cart, .contact-form, .login-form {
                 margin-bottom: 2em;
                 text-align: center;
-                background-color: #ff9900; /* Cambia el color de fondo de estas secciones a blanco */
+                background-color: black; /* Cambia el color de fondo de estas secciones a blanco */
                 padding: 1em; /* Añadido padding para un mejor espacio interior */
                 border-radius: 5px; /* Bordes redondeados para mejor apariencia */
                 margin-left: 50px; /* Ajusta el margen izquierdo */
