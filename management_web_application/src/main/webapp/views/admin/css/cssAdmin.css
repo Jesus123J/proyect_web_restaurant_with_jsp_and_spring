@@ -124,6 +124,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border: 1px;
 }
 
 table, th, td {
@@ -137,4 +138,13 @@ th, td {
 
 th {
     background-color: #f3f3f3;
+    position: sticky;
+    top: 0px;
+    
+}
+.table-wrapper{
+    max-height: 300px;
+    overflow-y: scroll ;
+    margin: 20px
+    
 }
