@@ -119,12 +119,52 @@ body {
     background: linear-gradient(to right, #d92626, #e69929);
 }
 
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.btn-edit {
+    background-color: blue;
+    color: white;
+}
+
+.btn-delete {
+    background-color: red;
+    color: white;
+}
+
 /* Estilos para la tabla */
-table {
+.table-container {
+    max-height: 400px; /* Ajusta este valor según tus necesidades */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+    border: 1px solid #ccc; /* Opcional: añade un borde para visualizar el contenedor */
+    margin-top: 20px; /* Opcional: espacio superior */
+}
+
+#employeeTable {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
+
+#employeeTable th,
+#employeeTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#employeeTable th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 
 table, th, td {
     border: 1px solid #ccc;
@@ -137,4 +177,50 @@ th, td {
 
 th {
     background-color: #f3f3f3;
+}
+.table-responsive {
+    max-height: 400px; /* Puedes ajustar la altura máxima según tus necesidades */
+    overflow-y: auto;
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* Cambia el color de fondo según tus necesidades */
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.form-container form {
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+    max-width: 600px; /* Puedes ajustar el ancho máximo según tus necesidades */
+}
+
+.form-container form input,
+.form-container form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container form button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.modal .form-group {
+    margin-bottom: 15px;
 }

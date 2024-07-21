@@ -707,5 +707,6 @@
                                     <script>
                                         document.addEventListener('DOMContentLoaded', () => {
                                             componentLoadingTable('<%=sessionAccount.getToken()%>');
+                                            insetDataTableManagerEmployeeList('<%=sessionAccount.getToken()%>');
                                         });
                                     </script>
