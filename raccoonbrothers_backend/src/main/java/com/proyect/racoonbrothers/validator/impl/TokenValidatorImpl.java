@@ -16,10 +16,12 @@ public class TokenValidatorImpl implements TokenValidator {
         if (headerToken == null){
             LogUtil.info("verification 1: -> " + null);
             throw new ApiUnauthorized(new ExceptionDetails("Se requiere el token de autenticación"));
-        }else if (headerToken.contains("Bearer")) {
-            LogUtil.info("verification 2: -> " + headerToken);
-            throw new ApiBadRequest(new ExceptionDetails("Falta el tipo de token 'Bearer' en el header"));
-        }
+            }
+
+     //   else if (headerToken.contains("Bearer")) {
+     //           LogUtil.info("verification 2: -> " + headerToken);
+     //           throw new ApiBadRequest(new ExceptionDetails("Falta el tipo de token 'Bearer' en el header"));
+     //       }
 
         String tokenSerialize = headerToken.replace("Bearer", "").replace(" ", "");
         if (tokenSerialize.equalsIgnoreCase("null")) {

@@ -40,15 +40,23 @@ public class EmployeeController {
         return "Hola empleado";
     }
 
+    @GetMapping(value = "/dataEmployee", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> dataCompletMamager(@RequestHeader HttpHeaders headers) throws RacoonBrotherException {
+        System.out.println(headers.getFirst(HttpHeaders.AUTHORIZATION));
+        AccountDto token = tokenValidator.verification(headers.getFirst(HttpHeaders.AUTHORIZATION) , ERole.EMPLEADO.name());
+        System.out.println("Entrando a api pasando");
+        return ResponseEntity.ok(token);
+    }
+
     //    Registro de entrada
-    @PostMapping(value = "/register-entry", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/register-entry", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> employeeRegistryEntry(@RequestHeader HttpHeaders headers) throws RacoonBrotherException {
         AccountDto token = tokenValidator.verification(headers.getFirst(HttpHeaders.AUTHORIZATION), ERole.EMPLEADO.name());
         return ResponseEntity.ok(employeeService.employeeRegistryEntry(token.getIdAccount()));
     }
 
     //    Registro de salida
-    @PostMapping(value = "/register-departure", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/register-departure", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> employeeRegistryDeparture(@RequestHeader HttpHeaders headers) throws RacoonBrotherException {
         AccountDto token = tokenValidator.verification(headers.getFirst(HttpHeaders.AUTHORIZATION), ERole.EMPLEADO.name());
         return ResponseEntity.ok(employeeService.employeeRegistryDeparture(token.getIdAccount()));

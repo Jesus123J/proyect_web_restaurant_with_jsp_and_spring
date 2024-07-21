@@ -56,6 +56,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
             employeeRegistryEntryResponse.setStatus(200);
             employeeRegistryEntryResponse.setMessage("Se registró su hora de entrada");
+            System.out.println("Se guardara fecha ");
+            employeeRegistryEntryResponse.setDateEntry(new Date());
+            System.out.println("La fecha dada se guardo correctamente");
+
         }
         return employeeRegistryEntryResponse;
     }

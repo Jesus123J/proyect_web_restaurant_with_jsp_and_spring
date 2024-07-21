@@ -10,14 +10,16 @@ public class BossOrderResultMapper implements RowMapper<BossOrderDto> {
     @Override
     public BossOrderDto mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new BossOrderDto(
-                rs.getLong(1),
-                rs.getString(2),
-                rs.getString(3),
-                rs.getDouble(4),
-                rs.getLong(5),
-                rs.getString(6),
-                rs.getString(7),
-                rs.getString(8)
+                rs.getLong(1), // id
+                rs.getString(2), // orderCode
+                rs.getString(3), // clientName
+                rs.getDouble(4), // orderPrice
+                rs.getLong(5), // idAccount
+                rs.getString(6), // fullName
+                null, // createTime (no está en la consulta SQL, puedes ajustar según necesidad)
+                null // updateTime (no está en la consulta SQL, puedes ajustar según necesidad)
         );
     }
 }
+
+

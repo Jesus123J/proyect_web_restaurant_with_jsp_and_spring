@@ -8,6 +8,7 @@ import lombok.Getter;
 public class BossEmployeeDto {
 
     private Long id;
+    private Long idAccount;
     private String fullName;
     private String email;
     private String cellphone;

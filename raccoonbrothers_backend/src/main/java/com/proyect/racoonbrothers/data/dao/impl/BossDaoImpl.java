@@ -21,6 +21,7 @@ public class BossDaoImpl implements BossDao {
         StringBuilder query = new StringBuilder();
         query.append("select ");
         query.append("pe.id, ");
+        query.append("pe.id_account, ");
         query.append("concat(pe.name,' ',pe.lastname,' ',pe.mother_lastname) as fullname, ");
         query.append("pe.email, ");
         query.append("pe.cellphone, ");
@@ -50,7 +51,6 @@ public class BossDaoImpl implements BossDao {
 
     @Override
     public List<BossOrderDto> listResultBossOrder() {
-
         StringBuilder query = new StringBuilder();
         query.append("SELECT ");
         query.append("rcorder.id, ");
@@ -58,14 +58,13 @@ public class BossDaoImpl implements BossDao {
         query.append("rcorder.client_name, ");
         query.append("rcorder.order_price, ");
         query.append("rcorder.id_account, ");
-        query.append("CONCAT(person.name,' ',person.lastname,' ',person.mother_lastname) AS fullname, ");
-        query.append("rcorder.create_time, ");
-        query.append("rcorder.update_time ");
+        query.append("CONCAT(person.name,' ',person.lastname,' ',person.mother_lastname) AS fullname ");
         query.append("FROM RECORD_ORDERS rcorder ");
         query.append("LEFT JOIN PEOPLE person ON person.id_account = rcorder.id_account; ");
 
-        return jdbcTemplate.query(query.toString(),new BossOrderResultMapper());
+        return jdbcTemplate.query(query.toString(), new BossOrderResultMapper());
     }
+
 
     @Override
     public List<BossOrderProductDto> listResultBossOrderProduct(Long idRecordOrder) {

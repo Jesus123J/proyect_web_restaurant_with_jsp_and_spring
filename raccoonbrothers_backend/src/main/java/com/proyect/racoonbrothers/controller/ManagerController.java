@@ -57,8 +57,4 @@ public class ManagerController {
         AccountDto token = tokenValidator.verification(headers.getFirst(HttpHeaders.AUTHORIZATION) , ERole.GERENTE.name());
         return ResponseEntity.ok(managerService.listManagerStock());
     }
-
-
-
-
 }
