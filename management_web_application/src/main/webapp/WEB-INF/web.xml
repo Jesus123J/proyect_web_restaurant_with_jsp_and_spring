@@ -69,4 +69,21 @@
         <url-pattern>/manager</url-pattern>
     </servlet-mapping>
     
+    
+    
+    <!-- Configuración del servlet -->
+    <servlet>
+        <servlet-name>PdfGeneratorServlet</servlet-name>
+        <servlet-class>com.utp.management_web_application.controller.PdfGeneratorServlet</servlet-class>
+    </servlet>
+
+    <!-- Mapeo del servlet a URL -->
+    <servlet-mapping>
+        <servlet-name>PdfGeneratorServlet</servlet-name>
+        <url-pattern>/PdfGeneratorServlet</url-pattern>
+        <url-pattern>/generatePdf</url-pattern>
+    </servlet-mapping>
+
+    <!-- Otras configuraciones pueden ir aquí -->
+    
 </web-app>

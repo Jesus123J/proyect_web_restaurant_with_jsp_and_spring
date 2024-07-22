@@ -554,42 +554,15 @@
 
                                         </div>
                                         <div class="container mt-5">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <h2>Registro de ingresos</h2>
-                                                    <table id="ingresoTable" class="table table-bordered">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Fecha</th>
-                                                                <th>Hora de Ingreso</th>
-                                                                <th>Acciones</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <!-- Aquí se insertan las filas dinámicamente -->
-                                                        </tbody>
-                                                    </table>
-                                                    <script>
-                                                        function ga(variable) {
-                                                            console.log(variable);
-                                                        }
-                                                    </script>
-                                                    <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
-                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken()%>')" >Generar Reporte</button>
-                                                    <button class="btn btn-danger" onclick="" >Generar PDF</button>
-                                                    <button class="btn btn-success" onclick="" >Generar Excel</button>
-                                                </div>
-                                            </div>
+
 
                                             <div class="row mt-5">
                                                 <div class="col">
                                                     <h2>Registro de salidas</h2>
-                                                    <table id="salidaTable" class="table table-bordered">
+                                                   <table id="salidaTable" class="table table-bordered" >
                                                         <thead>
                                                             <tr>
-                                                                <th>Fecha</th>
                                                                 <th>Hora de Salida</th>
-                                                                <th>Acciones</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -601,7 +574,7 @@
                                                             console.log(variable);
                                                         }
                                                     </script>
-                                                    <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
+                                                    <button class="btn btn-primary" onclick="agregarSalida('<%=sessionAccount.getToken()%>')">Agregar</button>
                                                     <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken()%>')" >Generar Reporte</button>
                                                     <button class="btn btn-danger" onclick="" >Generar PDF</button>
                                                     <button class="btn btn-success" onclick="" >Generar Excel</button>
@@ -610,34 +583,7 @@
 
                                             <div class="row mt-5">
                                                 <div class="col">
-                                                    <h2>Registro de faltas</h2>
-                                                    <table id="faltasTable" class="table table-bordered">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Fecha</th>
-                                                                <th>Motivo</th>
-                                                                <th>Acciones</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <!-- Aquí se insertan las filas dinámicamente -->
-                                                        </tbody>
-                                                    </table>
-                                                    <script>
-                                                        function ga(variable) {
-                                                            console.log(variable);
-                                                        }
-                                                    </script>
-                                                    <button class="btn btn-primary" onclick="addRow('ingresoTable')">Agregar</button>
-                                                    <button class="btn btn-dark" onclick="componentContext('<%=sessionAccount.getToken()%>')" >Generar Reporte</button>
-                                                    <button class="btn btn-danger" onclick="" >Generar PDF</button>
-                                                    <button class="btn btn-success" onclick="" >Generar Excel</button>
-                                                </div>
-                                            </div>
-
-                                            <div class="row mt-5">
-                                                <div class="col">
-                                                    <h2>Registro de descansos</h2>
+                                                    <h2>Registro de Asistencias</h2>
                                                     <table id="descansosTable" class="table table-bordered" >
                                                         <thead>
                                                             <tr>
@@ -662,43 +608,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Agregar nueva fila</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-
-                                                        <div class="modal-body">
-                                                            <form id="yourTableForm">
-                                                                <div class="mb-3">
-                                                                    <label for="fechaSalida" class="form-label">Fecha</label>
-                                                                    <input type="date" class="form-control datepicker" id="fechaSalida" placeholder="YYYY-MM-DD">
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="horaSalida" class="form-label">Hora de Ingreso</label>
-                                                                    <input type="time" class="form-control timepicker" id="horaSalida" placeholder="HH:MM">
-                                                                </div>
-
-
-
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                                                    <button type="submit" class="btn btn-primary">Guardar</button>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p></p>
-
                                         </div>
-
-
-
-
                                     </body>
 
                                     </main>

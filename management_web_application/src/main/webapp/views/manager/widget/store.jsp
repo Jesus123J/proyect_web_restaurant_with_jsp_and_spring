@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<h2>Almacen</h2>
+<h2>Almacén</h2>
 <input class="buscador" type="search" placeholder="Buscar">
 <table class="table table-success table-striped">
     <thead>
@@ -17,65 +17,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
-        <tr class="table-light">
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-            <td>dato</td>
-        </tr>
+        <!-- Los datos se agregarán aquí mediante JavaScript -->
     </tbody>
 </table>

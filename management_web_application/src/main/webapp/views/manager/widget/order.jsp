@@ -52,7 +52,8 @@
     <input class="nombre" type="text" placeholder="Nombre">
     <button type="button" class="btn btn-primary b-pedido" onclick="openModal('<%= token%>')">Ver productos</button>
     <label class="l-pedido">Precio total: <p align="center"></p></label>
-    <button type="button" class="btn btn-primary b-pedido" onclick="registroPedido()">Registrar pedido</button>
+    <button type="button" class="btn btn-primary b-pedido" onclick="registroPedido('<%= token%>')">Registrar pedido</button>
+    <button id="generarReciboBtn" class="btn btn-primary b-pedido" >Generar Recibo</button>
 </div>
 
 <div class="modal" id="exampleModalCenter">
@@ -72,3 +73,4 @@
         </div>
     </div>
 </div>
+

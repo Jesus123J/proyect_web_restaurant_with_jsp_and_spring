@@ -16,9 +16,9 @@
             <ul class="list">
                 <li class="list-item" id="AreaEmpleado" onclick="changeContainerShowEmployeeManager(false)">Area de empleado</li>
                 <li class="list-item" id="AreaPedidos" onclick="changeContainerShowOrderManager()">Area de pedidos</li>
-                <li class="list-item" id="AreaAlmacen" onclick="changeContainerShowStoreManager()">Area de almacen</li>
+                <li class="list-item" id="AreaAlmacen" onclick="changeContainerShowStoreManager('<%= ((LoginResponse) request.getSession().getAttribute("sessionAccount")).getToken()%>')">Area de almacen</li>
             </ul>
-            <button type="button" class="btn btn-primary b_exit">Salir</button>
+            <button type="button" onclick="window.location.href='<%= request.getContextPath() %>/home'" class="btn btn-primary b_exit">Salir</button>
         </div>
         <div id="content">
             <div class="section-info">
@@ -204,3 +204,11 @@ function downloadExcel() {
                         fetchEmployees();
                     });
 </script>
+<!-- Modal para mostrar el PDF -->
+<div id="pdfModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+    <div style="position:relative; width:80%; height:80%; margin:5% auto; background:white; padding:20px;">
+        <button id="closeModal" style="float:right;">Cerrar</button>
+        <iframe id="pdfViewer" style="width:100%; height:calc(100% - 40px);" frameborder="0"></iframe>
+        <button id="downloadBtn" style="margin-top:20px;">Descargar PDF</button>
+    </div>
+</div>

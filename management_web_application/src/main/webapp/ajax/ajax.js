@@ -163,7 +163,7 @@ function populateTable(orders) {
 }
 
 // function of the method 
-async function changeContainerShowStoreManager() {
+async function changeContainerShowStoreManager(token) {
 
     const action = 'showStoreManager';
     console.log("store");
@@ -189,7 +189,8 @@ async function changeContainerShowStoreManager() {
         for (let element of elements) {
             element.innerHTML = text;
         }
-
+        console.log("store aaaaaaaaaaaaaa");
+        fetchStockData(token);
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
@@ -449,12 +450,57 @@ function actualizarPrecioTotal(price) {
     precioTotal += price;
     document.querySelector('.l-pedido p').textContent = precioTotal.toFixed(2);
 }
+//
+function registroPedido(token) {
+    const apiUrl = 'generatePdf'; // URL del servlet que genera el PDF
 
-function registroPedido() {
-    console.log(ListaProductos);
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+            .then(response => {
+                if (response.ok) {
+                    return response.blob();
+                } else {
+                    throw new Error('Error al generar el PDF');
+                }
+            })
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
 
+                // Muestra el PDF en un modal
+                showModalWithPdf(url);
+
+                // Configura el botón de descarga
+                document.getElementById('downloadBtn').onclick = () => {
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'boleta.pdf'; // Nombre del archivo PDF
+                    a.click();
+                };
+            })
+            .catch(error => {
+                console.error(error);
+                alert('No se pudo generar el PDF');
+            });
 }
 
+function showModalWithPdf(pdfUrl) {
+    const modal = document.getElementById('pdfModal');
+    const iframe = document.getElementById('pdfViewer');
+
+    iframe.src = pdfUrl;
+    modal.style.display = 'block';
+
+    document.getElementById('closeModal').onclick = () => {
+        modal.style.display = 'none';
+        URL.revokeObjectURL(pdfUrl); // Libera el objeto URL cuando se cierra el modal
+    };
+}
+
+//
 async function componentAsync(token) {
     //El  clase fetch  es una libreria propia de javascript hace una promesa en el cual  espera la respusta
     // method diferentes tipos :
@@ -892,5 +938,88 @@ async function addProduct(token) {
 
     } catch (error) {
         console.error('Error al registrar el producto:', error);
+    }
+}
+
+
+/////////////////////////////////////////////// 
+
+function fetchStockData(token) {
+    
+    console.log("Entra al fetch");
+    console.log(token);
+    fetch('http://localhost:9091/manager/stock/list', {
+        method: 'GET', // El método puede ser GET, POST, etc., dependiendo del servicio
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token          
+        }
+    }).then(response => {
+        console.log("Entra dentro del fech");
+                if (!response.ok) {
+                    throw new Error('Error en la red');
+                }
+                return response.json();
+            }).then(data => {
+                // Vaciar el tbody antes de agregar nuevos datos
+                const tbody = document.querySelector('table tbody');
+                tbody.innerHTML = '';
+
+                // Iterar sobre los datos y agregar filas a la tabla
+                data.managerStocks.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.name}</td>
+                        <td>${item.unit}</td>
+                        <td>${item.priceUnit.toFixed(2)}</td>
+                        <td>${item.amount}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error al obtener los datos:', error);
+            });
+}
+
+//
+//
+async function agregarSalida(token) {
+    try {
+        const response = await fetch('http://localhost:9091/employee/register-departure', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+
+        const responseJson = await response.json();
+
+        // Mostrar mensaje de respuesta
+        alert(responseJson.message);
+        if (responseJson.status === 400) {
+            return;
+        }
+        // Obtener la fecha y hora actual
+        const currentDateTime = new Date();
+        const formattedDateTime = currentDateTime.toLocaleString(); // Formato legible de fecha y hora
+
+        // Obtenemos el elemento tbody de la tabla
+        const tbody = document.querySelector('#salidaTable tbody');
+
+        // Crear una nueva fila con la fecha y hora actual
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        cell.textContent = formattedDateTime;
+        row.appendChild(cell);
+        tbody.appendChild(row);
+
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
     }
 }
