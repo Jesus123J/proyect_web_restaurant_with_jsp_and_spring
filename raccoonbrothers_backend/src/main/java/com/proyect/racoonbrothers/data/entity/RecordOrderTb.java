@@ -12,7 +12,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "record_orders")
+@Entity(name = "RECORD_ORDERS")
 public class RecordOrderTb {
 
     @Id

@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "roles")
+@Entity(name = "ROLES")
 public class RoleTb {
 
     @Id

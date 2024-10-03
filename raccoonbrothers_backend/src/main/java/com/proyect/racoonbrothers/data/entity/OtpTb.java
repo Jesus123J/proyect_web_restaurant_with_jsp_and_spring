@@ -9,7 +9,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "otp")
+@Entity(name = "OTP")
 public class OtpTb {
 
     @Id

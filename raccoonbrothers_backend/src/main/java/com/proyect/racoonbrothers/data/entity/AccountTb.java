@@ -9,7 +9,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "accounts")
+@Entity(name = "ACCOUNTS")
 @ToString
 public class AccountTb {
 

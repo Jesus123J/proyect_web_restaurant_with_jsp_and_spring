@@ -9,7 +9,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "history_stock")
+@Entity(name = "HISTORY_STOCK")
 @ToString
 public class HistoryStockTb {
 

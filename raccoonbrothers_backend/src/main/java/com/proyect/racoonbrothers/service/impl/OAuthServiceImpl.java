@@ -67,6 +67,7 @@ public class OAuthServiceImpl implements OAuthService {
         if (personExist.isEmpty()){
             return new SendNoticeResponse(400,"No existe la persona con este dni");
         }
+        new SendNoticeResponse(400,"No existe la cuenta relacionada a la persona");
         Optional<AccountTb> accountExist = accountRepository.findById(personExist.get().getIdAccount());
         if (accountExist.isEmpty()){
             return new SendNoticeResponse(400,"No existe la cuenta relacionada a la persona");

@@ -20,7 +20,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         StringBuilder query = new StringBuilder();
         query.append("SELECT  ");
         query.append("* ");
-        query.append("FROM HISTORY_ATTENDANCES  ");
+        query.append("FROM history_attendance  ");
         query.append("WHERE id_account = (?) ");
         query.append("ORDER BY id DESC  ");
         query.append("LIMIT 1; ");

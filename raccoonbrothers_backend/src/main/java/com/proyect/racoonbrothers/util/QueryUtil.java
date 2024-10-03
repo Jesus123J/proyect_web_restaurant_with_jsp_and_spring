@@ -25,9 +25,9 @@ public class QueryUtil {
             "pe.mother_lastname, " +
             "rol.id as idRole, " +
             "rol.name as roleType " +
-            "FROM PEOPLE pe " +
-            "LEFT JOIN ACCOUNTS ac ON ac.id = pe.id_account " +
-            "LEFT JOIN ROLES rol ON ac.id_role = rol.id " +
+            "FROM people pe " +
+            "LEFT JOIN accounts ac ON ac.id = pe.id_account " +
+            "LEFT JOIN roles rol ON ac.id_role = rol.id " +
             "WHERE ac.username = (?) AND ac.password = (?)";
 
 

@@ -59,8 +59,8 @@ public class BossDaoImpl implements BossDao {
         query.append("rcorder.order_price, ");
         query.append("rcorder.id_account, ");
         query.append("CONCAT(person.name,' ',person.lastname,' ',person.mother_lastname) AS fullname ");
-        query.append("FROM RECORD_ORDERS rcorder ");
-        query.append("LEFT JOIN PEOPLE person ON person.id_account = rcorder.id_account; ");
+        query.append("FROM record_orders rcorder ");
+        query.append("LEFT JOIN people person ON person.id_account = rcorder.id_account; ");
 
         return jdbcTemplate.query(query.toString(), new BossOrderResultMapper());
     }
@@ -78,9 +78,9 @@ public class BossDaoImpl implements BossDao {
         query.append("product.price as priceUnit, ");
         query.append("orderProduct.amount_product as amountProduct, ");
         query.append("orderProduct.price_products as priceProducts ");
-        query.append("FROM ORDER_PRODUCTS orderProduct ");
-        query.append("LEFT JOIN PRODUCTS product ON product.code = orderProduct.product_code ");
-        query.append("LEFT JOIN RECORD_ORDERS recordOrder ON recordOrder.id = orderProduct.id_record_orders ");
+        query.append("FROM order_products orderProduct ");
+        query.append("LEFT JOIN products product ON product.code = orderProduct.product_code ");
+        query.append("LEFT JOIN record_orders recordOrder ON recordOrder.id = orderProduct.id_record_orders ");
         query.append("WHERE recordOrder.id = (?); ");
 
         return jdbcTemplate.query(query.toString(), new BossOrderProductResultMapper(),idRecordOrder);
@@ -95,7 +95,7 @@ public class BossDaoImpl implements BossDao {
         query.append("unit, ");
         query.append("price_unit as priceUnit, ");
         query.append("amount ");
-        query.append("FROM STOCK; ");
+        query.append("FROM stock; ");
 
         return jdbcTemplate.query(query.toString(), new BossStockResultMapper());
     }
