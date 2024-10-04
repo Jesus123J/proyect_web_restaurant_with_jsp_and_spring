@@ -1,0 +1,137 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo del cuerpo */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima del cuerpo igual a la altura visible del dispositivo */
+    background: linear-gradient(to right, #e32929, #f9b438); /* Fondo degradado */
+}
+
+/* Estilos para el header */
+header {
+    width: 100%;
+    background-color: #333; /* Color de fondo del header */
+    color: #fff; /* Color del texto */
+    padding: 10px; /* Espaciado interior */
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    justify-content: space-between; /* Espacio entre elementos */
+}
+
+header h1 {
+    margin: 0;
+    text-align: center; /* Alineación del título al centro */
+}
+
+.back-button {
+    background-color: #444; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interior */
+    cursor: pointer; /* Cambio de cursor al pasar */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.back-button:hover {
+    background-color: #555; /* Color de fondo al pasar el cursor */
+}
+
+/* Contenedor principal */
+main {
+    flex: 1; /* Ocupar todo el espacio disponible */
+    display: flex;
+    flex-direction: column; /* Columnas */
+    align-items: center; /* Centrado horizontal */
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 20px auto; /* Margen exterior */
+}
+
+/* Estilos para el carrusel */
+.carousel-section {
+    width: 100%;
+    max-width: 900px; /* Ancho máximo del carrusel */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 400px; /* Altura del carrusel */
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste de la imagen para cubrir */
+}
+
+/* Estilos para la lista de juegos */
+.game-list {
+    display: flex;
+    flex-wrap: wrap; /* Envoltura de los elementos */
+    justify-content: space-around; /* Distribución de los items */
+    gap: 20px; /* Espacio entre elementos */
+    padding: 20px; /* Espaciado interior */
+    background-color: #fff; /* Color de fondo */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-top: 20px; /* Margen superior */
+}
+
+.game-item {
+    flex: 1 1 calc(33.333% - 20px); /* Distribución en 3 columnas con margen */
+    max-width: calc(33.333% - 20px); /* Ancho máximo del elemento */
+    text-align: center; /* Alineación del texto al centro */
+    padding: 10px; /* Espaciado interior */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    background-color: #f9f9f9; /* Color de fondo */
+}
+
+.game-item img {
+    width: 100%; /* Tamaño completo */
+    height: 300px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Ajuste de la imagen para cubrir */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.game-item h2 {
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 5px; /* Margen inferior */
+}
+
+.game-item p {
+    font-size: 16px; /* Tamaño de fuente */
+    color: #555; /* Color del texto */
+}
+
+/* Estilos para el footer */
+footer {
+    width: 100%;
+    background-color: #333; /* Color de fondo del footer */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Alineación del texto al centro */
+    padding: 10px; /* Espaciado interior */
+    margin-top: auto; /* Margen superior automático */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+footer a {
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-bottom: 1px dashed #fff; /* Estilo del hipervínculo */
+    padding-bottom: 2px; /* Espaciado inferior del hipervínculo */
+}
+
+footer a:hover {
+    color: #f9b438; /* Color del texto al pasar */
+    border-bottom-color: #f9b438; /* Color del borde al pasar */
+}

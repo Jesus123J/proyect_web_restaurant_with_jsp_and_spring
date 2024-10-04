@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  tomcat:
+    build: 
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - "8080:8080"
+    container_name: mywebapp
+    networks:
+      - raccoonbrothers_network
+
+networks:
+  raccoonbrothers_network:
+    external: true

@@ -1,0 +1,113 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Estilo del cuerpo */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #e32929, #f9b438);
+}
+
+/* Contenedor principal */
+.container-main {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Sección de usuario */
+#section-user {
+    flex: 0 0 25%;
+    padding: 20px;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_user {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.list {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.list-item {
+    padding: 15px;
+    margin: 10px 0;
+    background: linear-gradient(to right, #e32929, #f9b438);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.list-item:hover {
+    background: linear-gradient(to right, #d92626, #e69929);
+}
+
+.b_exit {
+    width: 80%;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    background: linear-gradient(to right, #e32929, #f9b438);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.b_exit:hover {
+    background: linear-gradient(to right, #d92626, #e69929);
+}
+
+/* Contenido */
+#content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-info {
+    margin-bottom: 20px;
+}
+
+.section-info .info {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Contenedor dinámico */
+.container-info {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: auto;
+}

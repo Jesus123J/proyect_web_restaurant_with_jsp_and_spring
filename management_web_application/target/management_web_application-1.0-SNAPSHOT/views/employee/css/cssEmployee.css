@@ -1,0 +1,142 @@
+
+            body {
+
+                background: coral; /* Cambia el color de fondo del body a naranja */
+            }
+            .table {
+                width: 100%;
+                margin-bottom: 1rem;
+                background-color: #fff;
+                color: #212529;
+                border-collapse: collapse;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            }
+
+            /* Estilo de cabecera de tabla */
+            .table thead {
+                background-color: #f8f9fa;
+                color: #6c757d;
+            }
+
+            /* Estilo de las celdas del cuerpo de la tabla */
+            .table tbody tr {
+                transition: background-color 0.3s ease;
+            }
+
+            /* Estilo de las celdas del cuerpo al pasar el mouse */
+            .table tbody tr:hover {
+                background-color: rgba(0, 0, 0, 0.075);
+            }
+
+            /* Estilo para las acciones (botones) */
+            .table.btn {
+                padding: 0.375rem 0.75rem;
+                font-size: 0.875rem;
+                line-height: 1.5;
+                border-radius: 0.25rem;
+            }
+
+            /* Estilo para las celdas de la primera columna con fecha */
+            .table tbody td:first-child {
+                min-width: 150px; /* Ajustar ancho mínimo para la columna de fecha */
+            }
+
+            /* Ajuste específico para los botones de eliminar */
+            .table .btn-danger {
+                background-color: #dc3545;
+                border-color: #dc3545;
+            }
+
+            /* Ajuste para los botones de agregar */
+            .btn-success {
+                background-color: #198754;
+                border-color: #198754;
+            }
+
+            /* Estilos para las tablas */
+            .table {
+                background-color: rgba(255, 193, 7, 0.2); /* Color amarillo translúcido */
+                border-radius: 10px; /* Bordes redondeados */
+                border: 1px solid rgba(255, 193, 7, 0.5); /* Borde amarillo más oscuro */
+            }
+
+            .table-striped tbody tr:nth-of-type(odd) {
+                background-color: rgba(255, 193, 7, 0.1); /* Color de fondo para filas impares */
+            }
+
+            .sidebar {
+                width: 200px;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #343a40;
+                padding-top: 20px;
+                z-index: 1000;
+            }
+
+            .sidebar a {
+                padding: 10px 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: white;
+                display: block;
+            }
+
+            .sidebar a:hover {
+                background-color: #575d63;
+            }
+
+            main {
+                padding: 2em;
+                max-width: 1200px;
+                margin: auto;
+            }
+
+            .intro, .game-list, .shopping-cart, .contact-form, .login-form {
+                margin-bottom: 2em;
+                text-align: center;
+                background-color: black; /* Cambia el color de fondo de estas secciones a blanco */
+                padding: 1em; /* Añadido padding para un mejor espacio interior */
+                border-radius: 5px; /* Bordes redondeados para mejor apariencia */
+                margin-left: 50px; /* Ajusta el margen izquierdo */
+                margin-right: 50px; /* Ajusta el margen derecho */
+            }
+
+            .icon-container {
+                position: fixed; /* Fijo en la pantalla */
+                top: 0.5px; /* Ajusta esta línea para mover el icono hacia abajo */
+                left: 20px; /* Ajusta esta línea para mover el icono hacia la derecha */
+                z-index: 1000; /* Asegura que el icono esté por encima de otros elementos */
+            }
+
+            .icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            .content {
+                margin-top: 100px; /* Espacio suficiente para que el contenido no quede debajo del icono */
+                padding: 20px;
+            }
+
+            .contenedor-imagen {
+                position: fixed; /* Fija el contenedor en la pantalla */
+                top: 5px; /* Distancia desde la parte superior */
+                right: 15px; /* Distancia desde el lado derecho */
+            }
+
+            .img {
+                width: 25.9px; /* Ancho de la imagen */
+                height: auto; /* Altura automática para mantener la proporción */
+            }
+
+            main {
+    padding: 2em;
+    max-width: 1200px;
+    margin: auto;
+}
+
+   

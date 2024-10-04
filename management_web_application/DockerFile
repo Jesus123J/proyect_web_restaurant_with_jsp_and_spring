@@ -1,0 +1,6 @@
+
+FROM tomcat:9.0-jdk11-openjdk
+ARG WAR_FILE=target/management_web_application-1.0-SNAPSHOT.war
+COPY ${WAR_FILE} /usr/local/tomcat/webapps/management_web_application.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
