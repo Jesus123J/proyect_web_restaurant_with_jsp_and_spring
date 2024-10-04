@@ -9,8 +9,7 @@ package com.utp.management_web_application.config;
  * @author Jesus Gutierrez
  */
 public enum ConfigConnection {
-
-    BASE_URL("http://localhost:9091");
+    BASE_URL("http://racoonbrothers:9091/"); // Nombre del contenedor del backend
 
     private final String nombre;
 
@@ -21,5 +20,4 @@ public enum ConfigConnection {
     public String getNombre() {
         return nombre;
     }
-    
 }

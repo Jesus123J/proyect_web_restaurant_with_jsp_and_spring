@@ -15,6 +15,9 @@ services:
     depends_on:
       raccoonbrothers_backend_db:
         condition: service_healthy
+    networks:
+      - raccoonbrothers_network
+
   raccoonbrothers_backend_db:
     image: mysql:8.0.33
     ports:
@@ -25,6 +28,12 @@ services:
       MYSQL_DATABASE: raccoonbrothers
     restart: always
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 10s
       retries: 10
+    networks:
+      - raccoonbrothers_network
+
+networks:
+  raccoonbrothers_network:
+    external: true
