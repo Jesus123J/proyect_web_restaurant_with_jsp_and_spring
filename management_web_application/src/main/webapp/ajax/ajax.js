@@ -125,7 +125,7 @@ async function changeContainerShowStoreManager() {
     const action = 'showStoreManager';
     console.log("store");
     try {
-        const response = await fetch('http://localhost:8080/Raccon_Brothers/ControllerManager', {
+        const response = await fetch('ControllerManager', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -156,7 +156,7 @@ async function changeContainerShowEmployeeManager(verificaion) {
     const action = 'showEmployeeManager';
 
     try {
-        const response = await fetch('http://localhost:8080/Raccon_Brothers/ControllerManager', {
+        const response = await fetch('ControllerManager', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -213,7 +213,7 @@ async function changeContainerShowOrderManager() {
     const action = 'showOrderManager';
     console.log("order");
     try {
-        const response = await fetch('http://localhost:8080/Raccon_Brothers/ControllerManager', {
+        const response = await fetch('ControllerManager', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -241,7 +241,7 @@ async function changeContainerShowOrderManager() {
 
 async function  componentLoadingTable(token) {
     try {
-        const responseData = await fetch('http://localhost:9091/employee/dataEmployee',
+        const responseData = await fetch('http://racoonbrothers:9091/employee/dataEmployee',
                 {
                     method: 'GET',
                     headers: {
@@ -252,7 +252,7 @@ async function  componentLoadingTable(token) {
 
         responseDataEmployee = await  responseData.json();
 
-        const response = await fetch('http://localhost:9091/boss/attendance/employee/list?idAccount=' + responseDataEmployee.idAccount,
+        const response = await fetch('http://racoonbrothers:9091/boss/attendance/employee/list?idAccount=' + responseDataEmployee.idAccount,
                 {
                     method: 'GET',
                     headers: {
@@ -280,7 +280,7 @@ async function  componentLoadingTable(token) {
 }
 async function componentContext(token) {
     try {
-        const response = await fetch('http://localhost:9091/employee/register-entry', {
+        const response = await fetch('http://racoonbrothers:9091/employee/register-entry', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -323,7 +323,7 @@ let precioTotal = 0.00; // Inicializar el precio total con el valor actual
 async function listaProductos(token) {
     try {
         console.log(token);
-        const response = await fetch('http://localhost:9091/manager/product/list', {
+        const response = await fetch('http://racoonbrothers:9091/manager/product/list', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -401,7 +401,7 @@ async function componentAsync(token) {
     //GET es de atraer 
     //POST es de enviar algo
 
-    const responsesEmployee = await fetch('http://localhost:9091/boss/product/list',
+    const responsesEmployee = await fetch('http://racoonbrothers:9091/boss/product/list',
             {
                 method: 'GET',
                 headers: {
