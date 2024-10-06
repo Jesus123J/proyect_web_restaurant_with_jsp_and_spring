@@ -44,7 +44,7 @@
 
 <script>
  function downloadPDF() {
-    const url = `http://localhost:8080/Raccon_Brothers/ControllerManager?downloadPDF=true`;
+    const url = `http://localhost:8080/ControllerManager?downloadPDF=true`;
 
     // Mostrar mensaje antes de la descarga
     alert('La descarga del PDF comenzará en breve. Por favor, selecciona la ubicación para guardarlo.');
@@ -82,7 +82,7 @@
         });
 }
 function downloadExcel() {
-    const url = `http://localhost:8080/Raccon_Brothers/ControllerManager?downloadExcel=true`;
+    const url = `http://localhost:8080/ControllerManager?downloadExcel=true`;
 
     // Mostrar mensaje antes de la descarga
     alert('La descarga del archivo Excel comenzará en breve. Por favor, selecciona la ubicación para guardarlo.');
@@ -168,7 +168,7 @@ function downloadExcel() {
                     async function fetchEmployees() {
                         const action = 'showEmployeeManager';
                         try {
-                            const response = await fetch('http://localhost:8080/Raccon_Brothers/ControllerManager', {
+                            const response = await fetch('http://localhost:8080/ControllerManager', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json'
